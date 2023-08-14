@@ -4,13 +4,13 @@ import org.springframework.ui.Model;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import lombok.RequiredArgsConstructor;
-@Controller
+@Controller//SpringFrameworkのDIコンテナ(インスタンスを予め生成し、保管している箱)へこのクラスを登録する
 @RequiredArgsConstructor
 public class HelloController {
 	
-	@GetMapping("/hello")
-	public String hellopage(Model model) {
-		return "hello";//hello.thmlのテンプレート名
+	@GetMapping("/hello")//HttpメソッドとURLのパスが一致した時にControllerが採用さえる。　localhost8080/hello
+	public String hellopage(Model model) {//メソッドの名前は任意。
+		return "hello";//この文字列は　文字列.htmlになる。　どのURLを返すかを指す。
 	}
 }
 //最初の参考サイト
