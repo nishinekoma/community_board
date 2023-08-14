@@ -64,7 +64,7 @@
 			<scope>test</scope>
 		</dependency>
 		<!--user add depen-->
-		<!--layoutを使用したい-->
+		<!--layoutを使用したいi-->
 		<dependency>
 			<groupId>nz.net.ultraq.thymeleaf</groupId>
 			<artifactId>thymeleaf-layout-dialect</artifactId>
