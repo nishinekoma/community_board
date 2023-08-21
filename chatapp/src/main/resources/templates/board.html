@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html 
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+		xmlns:th="http://www.w3.org/1999/xhtml"
+		layout:decorate="~{layout}">
+<head>
+	<title>掲示板</title>
+<meta charset="UTF-8">
+<meta name="description" content="掲示板です。">
+<link th:href="@{css/board.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div layout:fragment="layoutContent">
+		<div id="board-area">
+			投稿の内容を表示する場所
+		</div>
+		<hr><!--水平の横線を引くことができる要素  :horizontal rule 横罫線-->
+		<form method="POST" action="/board" th:object="${commentForm}"><!--ControllerでaddObjectしたフォームクラスを指定しこのフォームをJavaのフォームクラスと対応させる。-->
+																		<!--formがHTTPメソッドPOSTで、http://localhost:8080/boardに送信せよという意味です。/boardはGETメソッドでも
+																		使っているが、メソッドが違うので使い分けることができる。-->
+		<div>
+			<input placeholder="名前" th:field="*{name}">
+			<span class="error-message" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</span>
+			<!--エラーが起きた際のスタイルは　class="error-message"で、#fields.hasErrors('name')はnameフィールドでエラーがあったかを検証する。　
+				th:ifは真の時のみそのHTMLを表示するというもの。 <span>は-->
+		</div>
+		<div>
+			<input placeholder="メールアドレス" th:field="*{mailAddress}">
+			<span class="error-message" th:if="${#fields.hasErrors('mailAddress')}" th:errors="*{mailAddress}">mailAddress Error</span>
+		</div>
+		<div>
+			<textarea placeholder="コメント内容" rows="5" cols="80" wrap="off" th:field="*{comment}"></textarea>
+		</div>
+		<span class="error-message" th:if="${#fields.hasErrors('comment')}" th:errors="*{comment}">comment Error</span>
+				<button>送信</button>
+		</form>
+	</div>
+</body>
+</html>
+<!--参考URL
+			https://zenn.dev/angelica/books/52be1e365c61ea/viewer/3adab0
+			https://developer.mozilla.org/ja/docs/Web/HTML/Element/form-->
+<!--関連
+	form HTML要素でウェブサーバーに情報を操作するための対話型コントロールを含む文書
+	action フォーム経由で送信された情報を処理するプログラムの URL。 詳細　https://developer.mozilla.org/ja/docs/Web/HTML/Element/form
+	
+	Thymeleafのタブ関連について　th:field th:object 参考　https://casual-tech-note.hatenablog.com/entry/2018/10/10/224250
+	・id属性にth:fieldに指定した変数名を代入。
+	・name属性にth:fieldに指定した変数名を代入。
+	・value属性にth:fieldに指定した変数に格納された値を代入。
+	
+	ちがい
+	<input placeholder="名前" th:field="*{name}">	//初期メッセージ　名前が表示される、
+	<input　type="text" th:field="*{name}">			//初期メッセ―ジ　なし
+	
+	
+-->
+
+

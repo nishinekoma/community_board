@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b60dc144-e265-4fed-a66e-e661d6ca419f" name="変更" comment="">
+      <change beforePath="$PROJECT_DIR$/Servers/.project" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servers/.settings/org.eclipse.core.resources.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/.settings/org.eclipse.core.resources.prefs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servers/.settings/org.eclipse.wst.server.core.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/.settings/org.eclipse.wst.server.core.prefs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servers/Tomcat10_Java17-config/catalina.policy" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/Tomcat10_Java17-config/catalina.policy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servers/Tomcat10_Java17-config/catalina.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/Tomcat10_Java17-config/catalina.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servers/Tomcat10_Java17-config/context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/Tomcat10_Java17-config/context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servers/Tomcat10_Java17-config/server.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/Tomcat10_Java17-config/server.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servers/Tomcat10_Java17-config/tomcat-users.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/Tomcat10_Java17-config/tomcat-users.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servers/Tomcat10_Java17-config/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/Tomcat10_Java17-config/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servers/Tomcat8_Java8-config/catalina.policy" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/Tomcat8_Java8-config/catalina.policy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servers/Tomcat8_Java8-config/catalina.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/Tomcat8_Java8-config/catalina.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servers/Tomcat8_Java8-config/context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/Tomcat8_Java8-config/context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servers/Tomcat8_Java8-config/server.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/Tomcat8_Java8-config/server.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servers/Tomcat8_Java8-config/tomcat-users.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/Tomcat8_Java8-config/tomcat-users.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servers/Tomcat8_Java8-config/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/Tomcat8_Java8-config/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servers/Tomcat9_Java11-config/catalina.policy" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/Tomcat9_Java11-config/catalina.policy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servers/Tomcat9_Java11-config/catalina.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/Tomcat9_Java11-config/catalina.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servers/Tomcat9_Java11-config/context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/Tomcat9_Java11-config/context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servers/Tomcat9_Java11-config/server.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/Tomcat9_Java11-config/server.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servers/Tomcat9_Java11-config/tomcat-users.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/Tomcat9_Java11-config/tomcat-users.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servers/Tomcat9_Java11-config/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/Tomcat9_Java11-config/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servers/Tomcat9_Java17-config/catalina.policy" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/Tomcat9_Java17-config/catalina.policy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servers/Tomcat9_Java17-config/catalina.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/Tomcat9_Java17-config/catalina.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servers/Tomcat9_Java17-config/context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/Tomcat9_Java17-config/context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servers/Tomcat9_Java17-config/server.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/Tomcat9_Java17-config/server.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servers/Tomcat9_Java17-config/tomcat-users.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/Tomcat9_Java17-config/tomcat-users.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servers/Tomcat9_Java17-config/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Servers/Tomcat9_Java17-config/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chatapp/src/main/resources/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/chatapp/src/main/resources/templates/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chatapp/src/main/resources/templates/test1.html" beforeDir="false" afterPath="$PROJECT_DIR$/chatapp/src/main/resources/templates/test1.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2UEQjCi7S0CuPuTIHPKGsOtgIlc" />
+  <component name="ProjectViewState">
+    <option name="flattenPackages" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/nishineko/Desktop/Eclipse_only/community_board/chatapp/chatapp"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="アプリケーションレベル" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="デフォルトタスク">
+      <changelist id="b60dc144-e265-4fed-a66e-e661d6ca419f" name="変更" comment="" />
+      <created>1692502395109</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1692502395109</updated>
+    </task>
+    <servers />
+  </component>
+</project>

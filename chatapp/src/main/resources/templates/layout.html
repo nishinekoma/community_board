@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html
 	xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"><!--thymeleaf向けのまじない-->
 <head>
 <meta charset="UTF-8" />
 <meta name="description" content="common-meta"><!--descriptionの意味：説明 content:コンテンツ-->
 <title>レイアウト</title>
+<!--style cssにリンク付け-->
+<link th:href="@{/css/style.css}" rel="stylesheet" type="text/css">
 </head>
 <body>
+	<header>header</header>
+	<div id="content"><!--content:コンテンツ-->
 	<main id="main-area" layout:fragment="layoutContent">
 		<p>Default content</p>
 	</main>
-	<div id="side-area">
-		サイドバー
+		<div id="side-area">
+			サイドバー
+		</div>
 	</div>
+	<footer>footer</footer>
 </body>
 </html>

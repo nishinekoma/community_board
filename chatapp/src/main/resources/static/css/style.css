@@ -1,0 +1,28 @@
+@charset "UTF-8";
+body{
+	margin: 0;
+	/*padding: defult 16;*/
+}
+header {
+	display: flex;/*その直下の要素が並列になる*/
+	background-color: #f0f8ff;/*グレーみたいな感じ*/
+	padding: 0.5rem 1rem/* 両脇8px　上下16px*/
+}
+
+#content {
+	display: flex;
+	background-color: #dae0e6;
+	padding: 0.5rem 1rem
+}
+
+#main-area {/*id="main-area"の要素指定。 */
+	width: 60%;
+}
+#side-area{
+	width: 25%;
+}
+footer{
+	display: flex;
+	background-color: #f0f8ff;
+	padding: 0.5rem 1rem;
+}

@@ -1,0 +1,14 @@
+@charset "UTF-8";
+body {
+  font-family: 'JetBrains Mono', 'Meiryo', sans-serif;
+}
+form{
+	display: flex;
+	flex-direction: column;
+	font-family: 'JetBrains Mono', 'Meiryo', sans-serif;
+}
+
+.error-message{
+	color: #e02525;
+	font-family: 'JetBrains Mono', 'Meiryo', sans-serif;
+}
