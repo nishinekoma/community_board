@@ -1,4 +1,4 @@
-package com.example.shatapp.application.form;
+package com.example.chatappli.application.form;
 
 import lombok.Data;//getter setterのやつ
 import org.hibernate.validator.constraints.Length;//文字列の長さバリデーション：入力された文字列の長さが指定された範囲内にあるかをチェック。

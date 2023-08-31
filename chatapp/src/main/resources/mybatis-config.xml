@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration 
+		PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+		"http://mybatis.org/dtd/mybatis-3-config.dtd" >
+<configuration>
+	<settings>
+        <setting name="defaultScriptingLanguage" value="org.mybatis.scripting.thymeleaf.ThymeleafLanguageDriver"/>
+        <setting name="jdbcTypeForNull" value="NULL" />
+        <setting name="defaultStatementTimeout" value="600"/>
+	</settings>
+</configuration>
+<!-- https://www.tenohira.xyz/tech/eclipse-import-dtd/ がやり方。　
+	　XMLファイルのつくり方　DTDのやつが乗っている。
+	 https://mybatis.org/mybatis-3/ja/configuration.html
+	 ↑はソースの詳細。-->
+	 

@@ -1,0 +1,6 @@
+INSERT INTO USER_COMMENT(NAME, MAILADDRESS, TEXT) VALUES (/* INSERTはSQLにおいてデータの保存を担当する。*/
+/*[# mb:p="dto.name"]*/ 'name' /*[/]*/,
+/*[# mb:p="dto.mailAddress"]*/ 'mailaddress' /*[/]*/,
+/*[# mb:p="dto.comment"]*/ 'text' /*[/]*/
+);
+/*構文はDB毎に微妙に異なり、今回はH2の構文に従う。　https://www.tutorialspoint.com/h2_database/h2_database_insert.htm*/

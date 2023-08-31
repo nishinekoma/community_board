@@ -1,0 +1,21 @@
+spring: #springbootアプリケーションを設定する開始キー
+  datasource: #datesourceデータベース関連の設定を指定するためのセクション　主にデータ―スは　アプリとデータベースの接続を確立するために使われる。
+    type: com.zaxxer.hikari.HikariDataSource #データソースのじっそとしてHikariCP（高性能なデータベースコネクションプール）を使用することを指定している。
+    driver-class-name: org.h2.Driver #h2のJDBCデータベースのドライバ
+    url: jdbc:h2:mem:develop;MODE=MYSQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE #データベースの接続URLを指定している。
+    hikari: #HikariCPの設定に関するセクション。HikariCPは高性能なでーたべーすコネクションプール
+      pool-name: ConnectionPool #コネクションプールの指定　接続の仕組み的なやつ。
+      leakDetectionThreshold: 5000 #5000ミリ秒　5秒以上開いたままになっている場合にコネクションリークを検出　
+      maximum-pool-size: 20 #コネクションプール内の最大コネクション数を
+      minimum-idle: 10 #最小アイドルコネクション数を指定している。アプリケーションがアイドル状態のコネクションを保持する最大数
+      username: sa #データーベースに接続するユーザ名
+      password:
+      driver-class-name: org.h2.Driver #データーベースのJDBCドライバのクラス名を指定する　この場合はH2データベースのドライバ指定
+  sql:  #SQL実行に関する設定を指定するためのセクション
+    init: #初期化に関する設定を指定するためのセクション
+      schema-locations: #初期化時に実行されるスキーマのSQLファイルパス
+        - classpath:h2/schema.sql #
+      mode: embedded # (DB初期化用SQL↑実行を)常に行う.EMBEDDED=h2dbのとき、の意味. ALWAYSは無条件 初期化のタイミングを指定している。
+      
+#https://zenn.dev/angelica/books/52be1e365c61ea/viewer/2e7c96
+#要件定義のステップをしっかり踏んでからER図を書き起こして詳細を詰めていく。

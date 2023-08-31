@@ -45,8 +45,8 @@
 		</dependency>
 		<dependency>
 			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
+			<artifactId>h2</artifactId><!--h2は今回主役のデータベースです。 、Mybatis特有のXMLによる設定を回避できる追加ライブラリ-->
+			<version>2.1.214</version>
 		</dependency>
 		<dependency>
 			<groupId>com.mysql</groupId>
@@ -75,6 +75,23 @@
 		<artifactId>validation-api</artifactId>
 		<version>2.0.1.Final</version>
 		</dependency>
+		<!-- DB -->
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>3.0.0</version><!--mybatis version 2.2.2がspring-boot-starter3.0に対応していなかったために
+										3.0.0に変更。-->
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis.scripting</groupId>
+			<artifactId>mybatis-thymeleaf</artifactId>
+			<version>1.0.3</version>
+		</dependency>
+		<!-- DIコンテナの登録確認 -->
+		<dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter-actuator</artifactId>
+	    </dependency>
 	</dependencies>
 
 	<build>
