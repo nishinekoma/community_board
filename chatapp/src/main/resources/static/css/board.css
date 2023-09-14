@@ -12,3 +12,46 @@ form{
 	color: #e02525;
 	font-family: 'JetBrains Mono', 'Meiryo', sans-serif;
 }
+
+.thread{
+	font-size: 1rem;
+	color: #333;
+}
+
+h2.title{
+	color: #485269;
+	font-size: 2rem;
+}
+
+.user-comments {
+	display: flex;
+	flex-direction:column;
+	background-color: colum;
+}
+
+.user-comments:not(:last-child){
+	margin-bottom: 0.15rem;
+}
+/* https://zenn.dev/angelica/books/52be1e365c61ea/viewer/5ef08e
+.user-commentsはクラスセレクタです。それに加えて:notという擬似クラスが付け加えられます。:not(s)は、.user-commentsについて、sセレクタが該当しないとき有効化する、という効果を持ちます。
+今回、sは:last-childになっています。:last-childは便利な擬似クラスで、適用した要素を「子」として扱ったとき、最後になる要素ならば有効という効果を持ちます。
+
+これらを組み合わせると、「最後の.user-comments以外の.user-comments」にmargin-bottom: 0.15rem;を適用、ということになります。*/
+.row-item > span{
+/* 「>」が子セレクタです。
+下記の例の場合row-itemクラスがついたHTMLタグの直下の階層にあるspan要素にだけCSSが適yousareru 
+*/
+	margin-right: 0.2rem;
+}
+
+.row-item > .name {
+	color: green;
+	font-size: 1.2rem;
+}
+
+.row-item > .date{
+	font-size: 0.9rem;
+}
+.row-item > .address {
+	color: gray;
+}

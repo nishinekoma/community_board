@@ -3,6 +3,8 @@ package com.example.chatappli.application.usecase;
 import com.example.chatappli.application.form.CommentForm;
 import com.example.chatappli.domain.model.UserComment;
 import com.example.chatappli.domain.model.UserCommentRepository;
+import com.example.chatappli.domain.model.UserComments;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,4 +33,13 @@ public class UserCommentUseCase {
 		//例えばここで、直近の投稿の一覧を取得し、今回と同じ内容の投稿がないかチェックする。
 		repository.save(userComment);//
 	}
+	 /**
+	   * 投稿の取得
+	   * @return 投稿のリスト
+	   */
+	public UserComments read() {
+		return repository.select();
+	}
 }
+
+

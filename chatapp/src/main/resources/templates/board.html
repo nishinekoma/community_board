@@ -12,10 +12,19 @@
 <body>
 	<div layout:fragment="layoutContent">
 		<div id="board-area">
-			投稿の内容を表示する場所
+			<h2 class="title">
+			【共感】バイトめんどくさすぎる件ｗｗｗｗ
+			</h2>
+			<!--flgment（thymeleafのテンプレートレイアウトでHTMLの断片を他のHTMLに組み込むような動作を可能にしている。）の呼び出し
+				th:replaceはフラグメントの内容でタグを置換する。(comments=${comments})の部分は変数${comments}をcommentsという名前で渡す。
+				${comments}に入っているデータは、Controllerに追加した一文、modelAndView.addObject("comments", userComments.getValues());のuserComments.getValues())です。
+modelAndView.addObject()は第一引数をデータの名前、第二引数をデータとしてthymeleafに渡すメソッドです。-->
+		<div th:replace="~{fragments/thread(comments=${comments})}">
+		
 		</div>
+	</div>
 		<hr><!--水平の横線を引くことができる要素  :horizontal rule 横罫線-->
-		<form method="POST" action="/board" th:object="${commentForm}"><!--ControllerでaddObjectしたフォームクラスを指定しこのフォームをJavaのフォームクラスと対応させる。-->
+		<form method="POST" th:action="@{/board}" th:object="${commentForm}"><!--ControllerでaddObjectしたフォームクラスを指定しこのフォームをJavaのフォームクラスと対応させる。-->
 																		<!--formがHTTPメソッドPOSTで、http://localhost:8080/boardに送信せよという意味です。/boardはGETメソッドでも
 																		使っているが、メソッドが違うので使い分けることができる。-->
 		<div>

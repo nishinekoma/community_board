@@ -1,0 +1,25 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+	<div th:fragment="tableData(comments)" class="thread">
+		<div th:each="comment : ${comments}" class="user-comments">
+			<div class="row-item">
+				<span th:text="${comment.id}" class="number-id"></span>
+				<span th:text="${comment.name}" class="name"></span>
+				<span th:text="${comment.dateTime}" class="date"></span>
+				<span th:text="${comment.mailAddress}" class="address"></span>
+			</div>
+			<div th:text="${comment.comment}" class="text-area">
+			</div>	
+		</div>
+	</div>
+</html>
+<!--
+	フラグメントの宣言(th:fragment)がtableData(comments)
+	このcommentsという引数に値を渡したかったので、渡すboard.html側では
+	fragments/thread(comments=${comments})
+	という渡し方をしている。
+	commentsは大本をたどるとControllerでDBから取得した値を放り込んだものになっています。
+	これを使うことで、DBに入ったデータをHTMLに動的にレンダリングすることができます。
+	そして、commentsは複数形の変数で宣言したとおり、リスト型のデータです。ですので、中身を取り出す必要があります。
+	そこで、th:eachを使います。th:eachの役割は、Javaのコードでいうと拡張for文にほぼ等しいです。右辺のデータを一つずつ取り出し、左辺に格納します。
+	取り出したデータの数だけ、<div th:each=""> ~ </div>の間を繰り返し描画します。
+-->

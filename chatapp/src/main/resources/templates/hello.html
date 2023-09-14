@@ -1,25 +1,15 @@
 <!DOCTYPE html>
-<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	  layout:decorate="~{layout}"><!--この行の記述はlayout.htmlのれイアウトを使うとということ-->
-<!--hello.thmlはひな形？のlayout.htmlをレイアウトに使用している。のでhello.html
-に書かれていないものが表示されるということは、layoutに書いてあることが表示されている。
--->
+<html lang="en">
 <head>
-<title>Hello world</title>
-<mate name="description" content="Hello">
+	<meta charset="UTF-8">
+	<title>Title</title>
 </head>
 <body>
-<div layout:fragment="layoutContent"><!--layout.htmlのれイアウト-->
-	<p>Hello World</p>
-</div>
+<form method="post" action="http://localhost:8080/board">
+	<input type="hidden" name="name" value="ななしさん">
+	<input type="hidden" name="mailAddress" value="example1@example.com">
+	<input type="hidden" name="comment" value="2021/4/20にわたしはカレールーとライスを1:1で皿に配置した上でグチャグチャにかき混ぜてやります">
+	<button>5000兆円もらえるボタン</button>
+</form>
 </body>
 </html>
-<!--で、例えばhttp://localhost:8080/helloで指定した時に
-hello.htmlにはlayout.htmlのレイアウトが適用される（基盤がこれになる）という解釈であってますか？
-そしてxmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-という風な名前空間はURLでのパッケージのようなもの。（ライブラリの関係の依存関係の
-衝突を避けること。）
-要は。名前空間は、ライブラリやツールが提供する要素や属性を他の要素と区別するために使用される。
-異なるライブラリが同じ要素名や属性名を使用しても、名前空間が異なるために衝突を回避できます。-->
-
-

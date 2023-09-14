@@ -11,14 +11,18 @@ import org.springframework.web.servlet.ModelAndView;				//HTML(View層)にデー
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import com.example.chatappli.application.usecase.UserCommentUseCase;
+import com.example.chatappli.domain.model.UserComments;
 @Controller
 @RequiredArgsConstructor
 public class BoardController {
 	private final UserCommentUseCase userCommentUseCase;
 	
-	
 	@GetMapping("/board")
 	public ModelAndView viewBord(ModelAndView modelAndView) {	//HTML(View層)にデータを渡す場合、利用するクラス
+		UserComments userComments = userCommentUseCase.read();
+		System.out.println(userComments.getValues());
+		modelAndView.addObject("comments",userComments.getValues());
+		
 		modelAndView.setViewName("board");//	HTMLfileのパス設定を行う。
 		modelAndView.addObject("commentForm",new CommentForm());//addObjectはThymeleafにデータを渡している。
 		return modelAndView;
