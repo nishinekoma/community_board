@@ -15,9 +15,17 @@ spring: #springbootアプリケーションを設定する開始キー
     init: #初期化に関する設定を指定するためのセクション
       schema-locations: #初期化時に実行されるスキーマのSQLファイルパス
         - classpath:h2/schema.sql #
+        - classpath:org/springframework/security/core/userdetails/jdbc/users.ddl #https://docs.spring.io/spring-security/reference/servlet/authentication/passwords/jdbc.html#page-title
       data-locations: #data初期値を加える．毎回毎回データをFormから登録するのは面倒のためアプリ起動時に入れる。
         - classpath:h2/data.sql
       mode: embedded # (DB初期化用SQL↑実行を)常に行う.EMBEDDED=h2dbのとき、の意味. ALWAYSは無条件 初期化のタイミングを指定している。
       encoding: UTF-8 #デフォルトで入れといた文字列等が文字化けするので
+logging: #SpringSecurityはデフォルトですと、ほとんどログを出さないのでデバックログを有効にする。
+  level:
+    com:
+      yourpackage: DEBUG
+    org:
+      springframework:
+        security: DEBUG
 #https://zenn.dev/angelica/books/52be1e365c61ea/viewer/2e7c96
 #要件定義のステップをしっかり踏んでからER図を書き起こして詳細を詰めていく。
