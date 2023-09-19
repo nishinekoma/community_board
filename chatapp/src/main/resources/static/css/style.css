@@ -7,6 +7,11 @@ header {
 	display: flex;/*その直下の要素が並列になる*/
 	background-color: #f0f8ff;/*グレーみたいな感じ*/
 	padding: 0.5rem 1rem/* 両脇8px　上下16px*/
+	 justify-content: space-between; /*これが追加*/
+}
+#logo {
+    font-size: 1.5rem;
+    margin: 0.1rem 0.25rem;
 }
 
 #content {

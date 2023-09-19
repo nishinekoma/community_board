@@ -103,6 +103,11 @@
 			<artifactId>guava</artifactId>
 			<version>30.1-jre</version>
 		</dependency>
+		<!--SpringSecurityとThymeleafで連携をとるため、下記モジュールを追加する-->
+		<dependency>
+			<groupId>org.thymeleaf.extras</groupId>
+			<artifactId>thymeleaf-extras-springsecurity6</artifactId><!--5はエラーでて6に変更。-->
+		</dependency>
 	</dependencies>
 
 	<build>
