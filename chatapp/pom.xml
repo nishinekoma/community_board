@@ -114,7 +114,7 @@
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
+				<artifactId>spring-boot-maven-plugin</artifactId><!--ここでなぜかエラーが起きているが、プロジェクトになぜか支障がなく解決策がないのでそっとしておく。-->
 				<configuration>
 					<excludes>
 						<exclude>

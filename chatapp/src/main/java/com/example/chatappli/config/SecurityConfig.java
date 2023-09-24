@@ -17,15 +17,20 @@ import org.springframework.security.web.util.matcher.RequestMatcher;
 @Configuration
 @RequiredArgsConstructor
 public class SecurityConfig {
-    @Bean
+    @Bean//保護するURLと保護しないURLの定義
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         //http.authorizeRequests().anyRequest().permitAll(); 古いので記事通りには使わない。
+
+        /*URLの制限を規定する。*/
         http.authorizeHttpRequests(auhorize ->
                 auhorize.requestMatchers(new AntPathRequestMatcher("/h2-console/**"))
-                        .hasRole("ADMIN").requestMatchers(new AntPathRequestMatcher("/board")).hasRole("USER").anyRequest().authenticated());//、h2-consoleから始まるパスはCSRF対策しない。
+                        .hasRole("ADMIN").requestMatchers(new AntPathRequestMatcher("/board"))
+                        .hasRole("USER").anyRequest().permitAll());//、h2-consoleから始まるパスはCSRF対策しない。
 
-        http.formLogin(login -> login.loginPage("/user/signup").permitAll()//ログインページのカスタマイズ
-                .defaultSuccessUrl("/board")).logout(logout -> logout.logoutUrl("/user/logout").logoutSuccessUrl("/user/signup"));//ログイン認証ページ要求、ログイン成功後デフォルト画面の設定
+         http.formLogin(login -> login.loginPage("/user").permitAll()//ログインページのカスタマイズ
+              .defaultSuccessUrl("/board")).logout(logout -> logout.logoutUrl("/user/logout").logoutSuccessUrl("/user"));//ログイン認証ページ要求、ログイン成功後デフォルト画面の設定
+
+
         http.csrf((csrf) -> csrf.ignoringRequestMatchers(new AntPathRequestMatcher("/h2-console/**")));//csrf制限解除　URL　/h2-console/任意...に誰でもアクセス可
         http.headers((head) -> head.frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin));//同じドメインであればiframeを許可する。　メソッド参照を使った場合　
         //http.headers((head) -> head.frameOptions((frame)-> frame.sameOrigin())); メソッド参照を使わない場合
@@ -37,7 +42,8 @@ public class SecurityConfig {
         return web -> web.ignoring().requestMatchers(PathRequest.toStaticResources().atCommonLocations());
     }
 }
-/*
+//.anyRequest().authenticated()); こいつのせいで他パスがlocalhost拒否される。
+/*ので、　.anyRequest().permitAll();にする　9・24日にやっと原因を特定し治った。
 * http.csrf((csrf) -> csrf.ignoringRequestMatchers("/h2-console/**"));
 * http.csrf()で関数型インターフェイスCustomizerの<CsrfConfigurer<HttpSecurity>>でCustomizerを受け取る
 *メソッド参照が使えた理由として、frameOptionsとsameOriginの戻り値「HeadersConfigurer<H>」と

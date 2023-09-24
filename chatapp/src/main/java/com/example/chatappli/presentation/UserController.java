@@ -1,5 +1,6 @@
 package com.example.chatappli.presentation;
 
+import ch.qos.logback.core.model.Model;
 import com.example.chatappli.application.form.UserForm;
 import com.example.chatappli.application.usecase.UserAuthUsecase;
 import lombok.extern.slf4j.Slf4j;
@@ -22,15 +23,21 @@ import jakarta.servlet.http.HttpServletRequest;
 public class UserController {
 
     private final UserAuthUsecase userAuthUsecase;
+    @GetMapping
+    public ModelAndView loginPage(ModelAndView modelAndView){
+        modelAndView.setViewName("user/login");
+        modelAndView.addObject("userForm",new UserForm());
+
+        return modelAndView;
+    }
     /**
      * 登録ページの表示
      * @return
      */
-    @GetMapping("/signup")
+    @GetMapping("signup")
     public ModelAndView signup(ModelAndView modelAndView){
         modelAndView.setViewName("user/signup");
         modelAndView.addObject("userForm", new UserForm());
-
         return modelAndView;
     }
     /**
@@ -39,7 +46,7 @@ public class UserController {
      * @param bindingResult
      * @return
      */
-    @PostMapping("/signup")
+    @PostMapping("signup")
     public ModelAndView register(
             @Validated @ModelAttribute UserForm userForm,
             BindingResult bindingResult,

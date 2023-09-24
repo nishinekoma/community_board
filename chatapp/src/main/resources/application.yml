@@ -1,6 +1,6 @@
 spring: #springbootアプリケーションを設定する開始キー
   datasource: #datesourceデータベース関連の設定を指定するためのセクション　主にデータ―スは　アプリとデータベースの接続を確立するために使われる。
-    type: com.zaxxer.hikari.HikariDataSource #データソースのじっそとしてHikariCP（高性能なデータベースコネクションプール）を使用することを指定している。
+    type: com.zaxxer.hikari.HikariDataSource #データソースの実装としてHikariCP（高性能なデータベースコネクションプール）を使用することを指定している。
     driver-class-name: org.h2.Driver #h2のJDBCデータベースのドライバ
     url: jdbc:h2:mem:develop;MODE=MYSQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE #データベースの接続URLを指定している。
     hikari: #HikariCPの設定に関するセクション。HikariCPは高性能なでーたべーすコネクションプール
@@ -29,3 +29,5 @@ logging: #SpringSecurityはデフォルトですと、ほとんどログを出�
         security: DEBUG
 #https://zenn.dev/angelica/books/52be1e365c61ea/viewer/2e7c96
 #要件定義のステップをしっかり踏んでからER図を書き起こして詳細を詰めていく。
+
+#application.yml定義：環境ごとに異なるデータを定義する
