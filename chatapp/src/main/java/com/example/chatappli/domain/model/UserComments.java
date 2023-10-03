@@ -7,11 +7,13 @@ import com.example.chatappli.domain.type.Name;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.AccessLevel;
+import org.springframework.util.CollectionUtils;
 
 import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.List;
 
+import org.h2.engine.User;
 import org.springframework.util.CollectionUtils;
 
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
@@ -27,6 +29,7 @@ public class UserComments {
 	  @Getter
 	  public static class UserComment {
 	    private final int id;
+		private final UserId userId;
 	    private final Name name;
 	    private final MailAddress mailAddress;
 	    private final Comment comment;
@@ -34,12 +37,14 @@ public class UserComments {
 
 	    public static UserComment from(
 	        int id,
+			String userId,
 	        String name,
 	        String mailAddress,
 	        String comment,
 	        LocalDateTime dateTime) {
 	      return new UserComment(
 	          id,
+			  UserId.form(userId),
 	          Name.from(name),
 	          MailAddress.from(mailAddress),
 	          Comment.from(comment),
@@ -48,3 +53,4 @@ public class UserComments {
 	    }
 	}
 }
+//DTO交換先

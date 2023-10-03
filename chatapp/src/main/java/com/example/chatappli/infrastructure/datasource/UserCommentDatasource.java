@@ -5,6 +5,7 @@ import com.example.chatappli.application.dto.UserCommentDto;
 import com.example.chatappli.domain.model.UserCommentRepository;
 import com.example.chatappli.domain.model.UserComments;
 import com.example.chatappli.application.dto.UserCommentReadDto;
+import com.example.chatappli.domain.model.UserId;
 
 import lombok.RequiredArgsConstructor;
 
@@ -23,18 +24,31 @@ public class UserCommentDatasource implements UserCommentRepository{
 		//パーツをつなげる。
 		mapper.insert(UserCommentDto.from(userComment));//UserCommentMapper mapperをDI（依存性注入）するように指定します。
 	}
-	
+
 	@Override
 	public UserComments select() {
 		List<UserCommentReadDto> dtos = mapper.select();
+		return convert(dtos);
+	}
+
+	@Override
+	public UserComments select(UserId userId){
+		List<UserCommentReadDto> dtos = mapper.selectById(userId.toString());
+		return  convert(dtos);
+	}
+
+
+
+	public UserComments convert(List<UserCommentReadDto> dtos) {
 		return UserComments.from(
 				dtos.stream().map(dto -> /*{ return*/ UserComments.UserComment.from(
 						dto.getId(),
+						dto.getUserId(),
 						dto.getName(),
 						dto.getMailAddress(),
 						dto.getComment(),
 						dto.getCreatedAt()
-						)/*;}*/).collect(Collectors.toUnmodifiableList())
+						)).collect(Collectors.toUnmodifiableList())
 				);
 	}
 	

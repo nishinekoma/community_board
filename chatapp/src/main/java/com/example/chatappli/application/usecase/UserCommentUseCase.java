@@ -4,6 +4,8 @@ import com.example.chatappli.application.form.CommentForm;
 import com.example.chatappli.domain.model.UserComment;
 import com.example.chatappli.domain.model.UserCommentRepository;
 import com.example.chatappli.domain.model.UserComments;
+import com.example.chatappli.domain.model.UserId;
+import org.springframework.security.core.userdetails.User;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -23,10 +25,11 @@ public class UserCommentUseCase {
 	 * @param commentForm ユーザ入力データ
 	 * @return 表示するデータ
 	*/
-	public void write(CommentForm commentForm) {
+	public void write(CommentForm commentForm, User user) {
 		//フォームアブジェクトからドメインオブジェクトへ変換
 		UserComment userComment = UserComment.from(
 				commentForm.getName(),
+				user.getUsername(),
 				commentForm.getMailAddress(),
 				commentForm.getComment()
 		);
@@ -37,6 +40,9 @@ public class UserCommentUseCase {
 	   * 投稿の取得
 	   * @return 投稿のリスト
 	   */
+	public UserComments read(UserId userId) {
+		return repository.select(userId);
+	}
 	public UserComments read() {
 		return repository.select();
 	}

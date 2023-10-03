@@ -2,6 +2,8 @@ package com.example.chatappli.presentation;
 
 import com.example.chatappli.application.form.CommentForm;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -29,14 +31,15 @@ public class BoardController {
 	}
 	//ポストを受け取った時にバリデーションを動作させる。
 	@PostMapping("/board")
-	public ModelAndView PostComment(@Validated @ModelAttribute CommentForm comment,BindingResult bindingResult) {
+	//@AuthenticationPrincipal 認証中（ログイン中のユーザ情報取得）
+	public ModelAndView PostComment(@AuthenticationPrincipal User user, @Validated @ModelAttribute CommentForm comment, BindingResult bindingResult) {
 		if(bindingResult.hasErrors()) {//bindingResult.hasErrors()は検証で一つでもエラーがあればbooleanの値を返す。　エラーがあった場合ture.　
 			ModelAndView modelAndView = new ModelAndView("/board");
 			modelAndView.addObject("commentForm",comment);//モデルに属性を追加する。
 			return modelAndView;
 		}
 		//エラーが無ければ保存する
-		userCommentUseCase.write(comment);
+		userCommentUseCase.write(comment,user);
 		return new ModelAndView("redirect:/board");//return "board"からreturn "redirect:/board";変更して　２重通信を回避。リロードしてもGETメソッドになる。
 	}
 }

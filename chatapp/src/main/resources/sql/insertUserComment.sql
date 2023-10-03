@@ -1,5 +1,6 @@
 INSERT INTO USER_COMMENT(NAME, MAILADDRESS, TEXT) VALUES (/* INSERTはSQLにおいてデータの保存を担当する。*/
 /*[# mb:p="dto.name"]*/ 'name' /*[/]*/,
+/*[# mb:p="dto.userId"]*/ 'user' /*[/]*/,
 /*[# mb:p="dto.mailAddress"]*/ 'mailaddress' /*[/]*/,
 /*[# mb:p="dto.comment"]*/ 'text' /*[/]*/
 );
