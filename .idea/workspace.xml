@@ -5,26 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b60dc144-e265-4fed-a66e-e661d6ca419f" name="変更" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chatapp/Sboot_peripheral_knowlege/Springbootの全体構造の知識.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chatapp/Sboot_peripheral_knowlege/シリアライズ図解.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chatapp/Springboot_peripheral_knowlege/Springbootの全体構造の知識.txt" beforeDir="false" afterPath="$PROJECT_DIR$/chatapp/Springboot_peripheral_knowlege/Springbootの全体構造の知識.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chatapp/src/main/java/com/example/chatappli/application/dto/UserCommentDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/chatapp/src/main/java/com/example/chatappli/application/dto/UserCommentDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chatapp/src/main/java/com/example/chatappli/application/dto/UserCommentReadDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/chatapp/src/main/java/com/example/chatappli/application/dto/UserCommentReadDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chatapp/src/main/java/com/example/chatappli/application/usecase/UserCommentUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/chatapp/src/main/java/com/example/chatappli/application/usecase/UserCommentUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chatapp/src/main/java/com/example/chatappli/domain/model/UserComment.java" beforeDir="false" afterPath="$PROJECT_DIR$/chatapp/src/main/java/com/example/chatappli/domain/model/UserComment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chatapp/src/main/java/com/example/chatappli/domain/model/UserCommentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/chatapp/src/main/java/com/example/chatappli/domain/model/UserCommentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chatapp/src/main/java/com/example/chatappli/domain/model/UserComments.java" beforeDir="false" afterPath="$PROJECT_DIR$/chatapp/src/main/java/com/example/chatappli/domain/model/UserComments.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chatapp/src/main/java/com/example/chatappli/infrastructure/datasource/UserCommentDatasource.java" beforeDir="false" afterPath="$PROJECT_DIR$/chatapp/src/main/java/com/example/chatappli/infrastructure/datasource/UserCommentDatasource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chatapp/src/main/java/com/example/chatappli/infrastructure/datasource/UserCommentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/chatapp/src/main/java/com/example/chatappli/infrastructure/datasource/UserCommentMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chatapp/src/main/java/com/example/chatappli/presentation/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/chatapp/src/main/java/com/example/chatappli/presentation/BoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chatapp/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/chatapp/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chatapp/src/main/resources/h2/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/chatapp/src/main/resources/h2/data.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chatapp/src/main/resources/h2/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/chatapp/src/main/resources/h2/schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chatapp/src/main/resources/sql/insertUserComment.sql" beforeDir="false" afterPath="$PROJECT_DIR$/chatapp/src/main/resources/sql/insertUserComment.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chatapp/src/main/resources/templates/fragments/thread.html" beforeDir="false" afterPath="$PROJECT_DIR$/chatapp/src/main/resources/templates/fragments/thread.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chatapp/src/main/resources/templates/hello.html" beforeDir="false" afterPath="$PROJECT_DIR$/chatapp/src/main/resources/templates/hello.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chatapp/src/main/resources/templates/user/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/chatapp/src/main/resources/templates/user/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chatapp/src/main/resources/templates/user/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/chatapp/src/main/resources/templates/user/signup.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +55,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/Nishineko/Desktop/Eclipse_only/community_board",
+    "last_opened_file_path": "C:/Users/Nishineko/Desktop/Eclipse_only/community_board/chatapp",
     "project.structure.last.edited": "プロジェクト",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -85,7 +67,7 @@
       <recent name="C:\Users\nishineko\Desktop\Eclipse_only\community_board\chatapp\chatapp\src\main\resources\templates\user" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.chatapp 内のすべて">
     <configuration name="ChatAppApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.chatappli.ChatAppApplication" />
       <module name="chatapp" />
@@ -111,6 +93,19 @@
       <module name="chatapp" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="community_board" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="community_board" />
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -148,5 +143,10 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/community_board$ChatAppApplication.ic" NAME="ChatAppApplication のカバレッジ結果" MODIFIED="1696335417344" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.example.chatappli.*</FILTER>
+    </SUITE>
   </component>
 </project>
