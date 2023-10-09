@@ -144,8 +144,8 @@ DDD（Domain-Driven-Design）：　https://www.ogis-ri.co.jp/otc/hiroba/technica
             ・ドメインモデルと実装コードとがきちんと対応つけられるようにする。
 
 URI  =  URL + URN
-         URI :  世の中のすべてのリソースを識別する．    URL： 位置を示す． URN： 名前を示す．
-　  UUID： 世の中のすべてのリソースを識別するためのID       １２８bit   例）GUID: 6fc39073-84d7-4aa9-8299-7965c89aae3b
+         URI :  世の中のすべてのリソースを識別する．    URL： 位置を示す． URN： 名前を示す．
+　  UUID： 世の中のすべてのリソースを識別するためのID       １２８bit   例）GUID: 6fc39073-84d7-4aa9-8299-7965c89aae3b
 　
 
 /-----*http*-----/
@@ -163,4 +163,18 @@ URI  =  URL + URN
 
 XMLデータ記述しき　json yaml town等。
 
+
+/---*Springbootの構成*---/　communityboard
+SQL
+    JDBC API: Javaからのデータベース操作するインターフェイス
+    MySQLDriver: MySQLへの接続ドライバ
+
+Security
+    Spring Security: セキュリティ対策を実装するフレームワーク
+
+Template Engines
+    Thymeleaf:ビューを作成するためのテンプレートエンジン
+
+web
+    Spring　Web:Webアプリを構築するためのスターター
 

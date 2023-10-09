@@ -4,4 +4,5 @@ INSERT INTO USER_COMMENT(NAME, USER_ID,MAILADDRESS, TEXT) VALUES (/* INSERTはSQ
 /*[# mb:p="dto.mailAddress"]*/ 'mailaddress' /*[/]*/,
 /*[# mb:p="dto.comment"]*/ 'text' /*[/]*/
 );
-/*構文はDB毎に微妙に異なり、今回はH2の構文に従う。　https://www.tutorialspoint.com/h2_database/h2_database_insert.htm*/
+-- 構文はDB毎に微妙に異なり、今回はH2の構文に従う。　https://www.tutorialspoint.com/h2_database/h2_database_insert.html
+--

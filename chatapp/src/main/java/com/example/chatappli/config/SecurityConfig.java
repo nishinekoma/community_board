@@ -13,8 +13,8 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.security.web.util.matcher.RequestMatcher;
 
-@EnableWebSecurity//CSRF保護が自動的に有効になる。
-@Configuration
+@EnableWebSecurity//CSRF保護が自動的に有効になる。全く別サイトからの勝手に実行されることを防ぐ。
+@Configuration//
 @RequiredArgsConstructor
 public class SecurityConfig {
     @Bean//保護するURLと保護しないURLの定義
