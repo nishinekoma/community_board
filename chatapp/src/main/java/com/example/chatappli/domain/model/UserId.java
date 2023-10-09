@@ -25,7 +25,7 @@ public class UserId {
         final int FNV_32_PRIME = 0x01000193;
         int hval = 0x811c9dc5;
 
-        byte[] bytes = value.getBytes();
+        byte[] bytes = value.getBytes();//文字をバイト・シーケンスにエンコード化　結果を新規バイト配列に格納
 
         int size = bytes.length;
 
@@ -33,6 +33,7 @@ public class UserId {
             hval *= FNV_32_PRIME;
             hval ^= aByte;
         }
-        return Integer.toHexString(hval);
+        System.out.println(hval);
+        return Integer.toHexString(hval);//基数16にして返す
     }
 }
