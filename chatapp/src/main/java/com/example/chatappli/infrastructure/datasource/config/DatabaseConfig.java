@@ -10,13 +10,13 @@ import org.springframework.security.provisioning.UserDetailsManager;
 
 import javax.sql.DataSource;//https://inero-software.com/spring-boot-3-0-migration-overview/   一部JakartaEEではなくJDK17に依存しているのでjakartaにリファクタリングする必要がない。
 
-@Configuration
+@Configuration//Configrationクラスの提供　
 @RequiredArgsConstructor
 public class DatabaseConfig {
     private final DataSource dataSource;
 
     @Bean
-    public UserDetailsManager userDetailsManager() {
+    public UserDetailsManager userDetailsManager() {//jdbcユーザー管理サービス
         return new JdbcUserDetailsManager(dataSource);
     }
 
