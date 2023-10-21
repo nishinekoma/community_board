@@ -96,6 +96,12 @@ JPA
 ORM( Object-relational mapping、O/RM、ORM)
     ・
 
+セマンティクス(semantics) 意味や意味論
+        IT　コンピュータに文書や情報のもつ意味を正確に解釈させ
+            文書の関連付けや情報収集などの処理を自動的に行わせている。
+
+ユーザーエクリペリエンス（UX）「User Experience」
+    ・ユーザーが得られる体験のことを指す。
 /---*設計思想・駆動*---/　
 ドメインオブジェクト
     定義
@@ -147,6 +153,27 @@ URI  =  URL + URN
          URI :  世の中のすべてのリソースを識別する．    URL： 位置を示す． URN： 名前を示す．
 　  UUID： 世の中のすべてのリソースを識別するためのID       １２８bit   例）GUID: 6fc39073-84d7-4aa9-8299-7965c89aae3b
 　
+ファクトリメソッド（Factory Method）　https://qiita.com/shoheiyokoyama/items/d752834a6a2e208b90ca
+工場って言われてるくらいだからオブジェクトの生成方法を決める。
+　前提知識
+    ・インスタンスの生成方法は複数の種類がある。
+    ・Factoryパターンがある。
+        ・定義  
+            ・Factoryクラスがオブジェクトの生成処理に加えて生成する
+                Objectの種類の変更をファクトリの処理のなかで動的に行う。
+                　※　多種多様なメソッドを作ることができ、コンストラクタで指定するより多様になる。
+    定義
+    ・インスタンスの作り方　生成処理を担当するメソッドのことを指す。
+    ・要約すると
+インスタンスとオブジェクトの使いわけ（厳密）
+    インスタンス
+    ・特定のクラスから生成されたObjectの個別コピーを渡す。
+        例
+            ・Personクラスから「John」と「Abell」というオブジェクトが生まれる
+    オブジェクト
+    ・プログラムされて処理される実体の総称を指す。
+    ・インスタンスを生成している元のクラス（設計図）のことではなく、
+        そもそも　「実行時に稼働している実体がオブジェクトと総称される」
 
 /-----*http*-----/
 主なメソッドﾞ（クライアントからサーバへ）
@@ -177,4 +204,90 @@ Template Engines
 
 web
     Spring　Web:Webアプリを構築するためのスターター
+    
+/-----*annotation @ アノテーション*-----/
+    lombok refe(公式？)　https://projectlombok.org/features/constructor
+    @Param ：MyBatisのSQLクエリ内で使用する変数(パラメータ)を使用できるもの。
+    例
+    Java　code
+    ・void updateUser(@Param("userId") int userId, @Param("newUsername") String newUsername);
 
+    SQL code
+     UPDATE users
+     SET username = #{newUsername}
+     WHERE id = #{userId}
+
+    @Bean （ビーンについて）　https://docs.spring.io/spring-framework/reference/core/beans/java/basic-concepts.html
+    基本概念
+    ・XMLの<beans>と関連がある。
+    利用・使用目的
+        ・Spring IoCコンテナによって管理されるオブジェクトを
+            「インスタンス化・構成・初期化」
+        ・そのインスタンスをSpringのコンテナに格納する
+
+    @Configuration
+    定義
+        ・Beanの定義ソースであることを示す。クラスに付ける。
+        ・同じクラス内の他のBean間のメソッドを呼ぶことで依存関係の定義できる
+
+    @SpringbootApplication
+    定義
+      Spring Bootは、ほかに設定ファイルなどを一切書かなくとも、
+     「SpringBasicApplicationというクラスがSpring Bootで起動する」ということを知ることができるのです。
+
+    @RequiredArgsConstructor//
+    参考　https://projectlombok.org/features/constructor
+    　➀final修飾子を探してかつ初期化されていないものを探す。でpublic クラス名(➀に合致したもの　変数名){this.変数名 = 変数名}
+
+    Mybatis　refe https://mybatis.org/mybatis-3/ja/sqlmap-xml.html#select
+    
+    @select
+        ・データを取り出すことがd系て初めてデータバースにデータを使いする意味がある。
+        
+    @Repository　https://springhack.com/springboot%E3%81%AErepository%E3%82%A2%E3%83%8E%E3%83%86%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/
+
+    リポジトリクラスとは
+    ・データソースをアプリの残りの部分から分離し、アプリの残りの部分にデータアクセスのための
+    クリーンなAPIを提供。ベストプラクティス
+
+    ・
+
+XMLについて
+参考
+https://triple-underscore.github.io/xml-names-ja.html?1.1
+    XML「Extensible Markup Language」の略で、日本語では「拡張可能なマークアップ言語」
+        特定の企業が提供している技術ではなく、インターネット上で使用される各種技術の標準化推進団体である、
+        W3C（World Wide Web Consortium）によるオープンな規格です。
+    目的
+        ・主にデータのやり取りや管理を簡単にする目的に使われる。
+        ・URIが主に外部参照として使われる　RFC3989を参照
+
+    特徴
+    ・データの意味がわかりやすい
+    ・拡張性が高い　論理的な構造・内容・属性を表現するドキュメント（文献）
+    ・あらゆるコンピュータシステムへ適応可能
+    ・SGMLの特徴を厳密に受け継ぎ、HTML以上の拡張性を実現させた物。
+    ・
+    使用用途
+    ・マニュアル（取扱説明書）、カタログ、評生申請書、医療カルテの運用・管理等に使用されている。
+    XMLを使って文章中のデータの要素名や属性を定義することで、
+    　マシン側にデータの重要度（大小関係など）を認識させられます
+
+    RFC3989参照してわかること。
+        定義
+        ・定義としてXMLについて書いてあるが、そこではURIも少々書かれている。
+        URI (Uniform Resource Identifier)について
+        　定義
+            ・リソースを識別するための手段。
+
+        　詳細
+            ・World Wide datesから派生している。
+            ・
+
+
+RFC(Request for Comments 意味：コメントを求める)
+    定義
+        ・インターネット技術の標準的な仕様を記した文書のこと。
+        ・新しいRFCが発行されると1ずつ増加します。
+    作成団体
+        ・IETE(Internet Engineering Task Force)が作成

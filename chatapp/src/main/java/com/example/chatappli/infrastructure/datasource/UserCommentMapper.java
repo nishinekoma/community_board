@@ -13,7 +13,7 @@ public interface UserCommentMapper {
 	@Insert("sql/insertUserComment.sql")//利用するSQLファイルを指す。
 	void insert(@Param("dto") UserCommentDto dto);
 	
-	@Select("sql/selectUserComment.sql")
+	@Select("sql/selectUserComment.sql")//Se
 	List<UserCommentReadDto> select();
 
 	@Select("sql/selectMyComment.sql")

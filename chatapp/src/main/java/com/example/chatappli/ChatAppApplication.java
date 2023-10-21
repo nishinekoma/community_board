@@ -10,3 +10,4 @@ public class ChatAppApplication {
 }
 //Springbootにはmainメソッドが必須。ないとエラーになる。
 //https://zenn.dev/angelica/books/52be1e365c61ea/viewer/7b55e1
+

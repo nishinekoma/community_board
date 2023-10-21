@@ -394,19 +394,6 @@ Mybatis（SQL）
                 ・インスタンスはメインメモリ上に生成されるため、プログラムの終了とともにそのデータは消失してしまう。
                     ・上記のため、プログラムで実行された処理結果データをDBに保存する処理（永続化が）必要になる。
 
-    annotation 
-    @Param ：MyBatisのSQLクエリ内で使用する変数(パラメータ)を使用できるもの。
-            ・SQLクエリ内で #{paramName} のようにパラメータを参照する際に、@Param アノテーションで指定した名前を使用してパラメータを識別します。
-
-    例
-    Java　code
-    ・void updateUser(@Param("userId") int userId, @Param("newUsername") String newUsername);
-    
-    SQL code
-     UPDATE users
-     SET username = #{newUsername}
-     WHERE id = #{userId}
-
 デザインパターンとは
     ・過去他のプログラマが直面している問題を幾度となく考え、それを再利用したものをいう。
         ・具体的に
