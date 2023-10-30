@@ -17,9 +17,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 @Service//Springコンテナに定義（一つの部品として定義）
 @RequiredArgsConstructor//フィールドを初期化するコンストラクタの定義
 public class UserCommentUseCase {
-	@Autowired
+	@Autowired //Autowiredにより実装したクラスがDIされる。 明示的にはいいと思う。DIされるって意味で　なくても稼働する
 	private final UserCommentRepository repository;
-	//private final UserCommentDatasource 
+	/*@Autowired　が生成するコード　ただし今回は@RequiredConstructorによって自然に生成されるため@Autowiredは本当ははいらない。
+	* public UserCommentUseCase(UserCommentRepository repository) {
+	* 		this.repository = repository
+	* 	}
+	*/
 	/*
 	 * ユーザの書き込みをDBに反映し、表示するデータをプレゼンテーション層に渡す
 	 * @param commentForm ユーザ入力データ
@@ -47,5 +51,10 @@ public class UserCommentUseCase {
 		return repository.select();
 	}
 }
+/*DI Dependency Injection
+	ChatappliのUserCommentUseCaseクラスのrepositoryに焦点を
+	当てて47・48行目にブレイクポイント当てるとわかりやすい。実装されたクラスが代入されている。
+
+* */
 
 
