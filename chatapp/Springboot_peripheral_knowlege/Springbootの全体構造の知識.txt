@@ -289,6 +289,17 @@ DI(Dependency Injection:依存性注入)　　https://programming-tips.jp/archiv
         ・DIさせるフィールドにつける。
         インジェクション　
 
+マークアップ言語について
+・SGMLとXMLとHTMLは　タグ　で構成されているマークアップ言語
+    特徴
+    ・「視覚表現」　や　「文書構造」　などを定義する
+    ・　タグ　は　スキーマ言語と呼ばれる使用によって決定している。
+    ・  基本的にDTD宣言をする。　例　　<!doctype HTML>　　　
+    ・  んで何か拡張をしたいときにXML Schemaを利用する　
+
+XML　Schemaについて
+　
+
 XMLについて
 参考
 https://triple-underscore.github.io/xml-names-ja.html?1.1
@@ -321,7 +332,40 @@ https://triple-underscore.github.io/xml-names-ja.html?1.1
             ・World Wide datesから派生している。
             ・
 　XMLの構文について
-    ・XML文書の一番外側の要素のことをルート要素と呼ぶ
+    特徴
+    ・※データのマークアップ言語である。
+        ・データを構造化し階層的に整理するための言語
+        ・スキーマ言語（基本:  DTD や 拡張： XML Schema）を定義する
+    ・スキーマ言語を定義できる。　schema 名詞　図表、図解、概要　
+        スキーマ言語:マークアップ言語で使用されている要素や属性の意味や構造を定義するための言語
+            ・DTDやXML Schema　がある。
+    基本ルール
+        ・「要素」、「属性」、「テキスト」で構成される。
+        ・ XML文書の一番外側の要素のことをルート要素と呼ぶ
+    構文構成
+        ・XML宣言　文書型宣言　データ部分
+            
+            文書型宣言
+            ・どういう要素や属性を、どういう順序で記述するのか　ルールを定義する。
+            ・主に２種類のやり方がある。
+                ・外部の文書型定義ファイルを指定する方法
+                    <!DOCTYPE chapter SYSTEM "document.dtd">
+                    
+                ・直接文書型定義を直接に記述する方法
+                    
+                    <!DOCTYPE 在庫データ[
+                        <!ELEMENT 在庫データ (商品)>
+                        <!ELEMENT 商品 (名前, 個数)>
+                        <!ELEMENT 名前 (#PCDATA)>
+                        <!ELEMENT 個数 (#PCDATA)>
+                    ]>
+
+                    <在庫データ>
+                        <商品>
+                            <名前>本棚</名前>
+                            <個数>12</個数>
+                        </商品>
+                    </在庫データ>
     
 
 
