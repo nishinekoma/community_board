@@ -289,6 +289,13 @@ DI(Dependency Injection:依存性注入)　　https://programming-tips.jp/archiv
         ・DIさせるフィールドにつける。
         インジェクション　
 
+    /*----annnotationの作り方----*/
+    参考　https://blog.satotaichi.info/meta-annotations/
+
+
+
+
+
 マークアップ言語について
 ・SGMLとXMLとHTMLは　タグ　で構成されているマークアップ言語
     特徴

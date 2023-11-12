@@ -14,10 +14,10 @@ import java.util.Collections;
 import java.util.List;
 
 
-@RequiredArgsConstructor(access = AccessLevel.PRIVATE)
-@Getter
+@RequiredArgsConstructor(access = AccessLevel.PRIVATE)//コンストラクタ　フィールド設定
+@Getter//クラス内にあるフィールド全てにゲッターが設定される。
 public class UserComments {
-	private final List<UserComment> values;
+	private final List<UserComment> values;//@Getter
 	
 	public static UserComments from(List<UserComment> comments) {
 		if(CollectionUtils.isEmpty(comments)) return new UserComments(Collections.emptyList());

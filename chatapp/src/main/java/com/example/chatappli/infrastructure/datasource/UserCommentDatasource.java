@@ -37,7 +37,7 @@ public class UserCommentDatasource implements UserCommentRepository{
 		return  convert(dtos);
 	}
 
-	public UserComments convert(List<UserCommentReadDto> dtos) {
+	public UserComments convert(List<UserCommentReadDto> dtos) {//convert変換するの意味
 		return UserComments.from(
 				dtos.stream().map(dto -> /*{ return*/ UserComments.UserComment.from(
 						dto.getId(),

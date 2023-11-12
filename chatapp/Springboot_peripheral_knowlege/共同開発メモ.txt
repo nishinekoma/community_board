@@ -458,3 +458,20 @@ JDBC　図解あり
 /*-------document ドキュメント見方　全体知識-------*/
 java APIのdocumentを見るときは、実行環境で使っているものJava17とかだったら
 Java17　APIを調べそこから階層ごとに見てったほうがいい。（しらべてメソッドなかった場合）
+
+/---*流れ　Springboot memo*---/
+22行目
+UserComments userComments = userCommentUseCase.read();
+repository = 　実装されたUserCommentDatasourceが入る
+//クラスUserCommentDatasource
+public UserComments read() {return repository.select();} 
+
+@Override
+public UserComments select() {
+	List<UserCommentReadDto> dtos = mapper.select();
+	return convert(dtos);
+}
+
+//interface UserCommentMapper
+@Select("sql/selectUserComment.sql")//org.apache.ibatis.annotations.Select
+List<UserCommentReadDto> select();

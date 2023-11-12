@@ -18,7 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @RequiredArgsConstructor//フィールドを初期化するコンストラクタの定義
 public class UserCommentUseCase {
 	@Autowired //Autowiredにより実装したクラスがDIされる。 明示的にはいいと思う。DIされるって意味で　なくても稼働する
-	private final UserCommentRepository repository;
+	private final UserCommentRepository repository;// DIされるのは UserCommentDatasource
 	/*@Autowired　が生成するコード　ただし今回は@RequiredConstructorによって自然に生成されるため@Autowiredは本当ははいらない。
 	* public UserCommentUseCase(UserCommentRepository repository) {
 	* 		this.repository = repository
