@@ -16,6 +16,9 @@ public class UserAuthUsecase {
     private final UserAuthRepository authRepository;
 
     public void userCreate(UserForm form, HttpServletRequest request) throws ServletException {
+        /*
+        form.getUsername()
+        * */
         authRepository.createUser(
                 form.getUsername(),
                 form.getPassword()

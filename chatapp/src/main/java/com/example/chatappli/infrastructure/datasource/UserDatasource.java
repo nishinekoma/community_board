@@ -15,7 +15,7 @@ public class UserDatasource implements UserAuthRepository {
     private final UserDetailsManager manager;
     private final PasswordEncoder passwordEncoder;
 
-    public void createUser(String userName, String password) {
+    public void createUser(String userName, String password) {//ここで重複チェックすべき？
         User user = new User(
                 userName,
                 passwordEncoder.encode(password),

@@ -46,7 +46,7 @@ public class UserController {
      * @param bindingResult
      * @return
      */
-    @PostMapping("signup")
+    @PostMapping("signup")//ここから登録受け取り　htmlから受け取っている。
     public ModelAndView register(
             @Validated @ModelAttribute UserForm userForm,
             BindingResult bindingResult,

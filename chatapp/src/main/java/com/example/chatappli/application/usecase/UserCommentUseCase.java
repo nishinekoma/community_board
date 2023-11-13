@@ -50,6 +50,10 @@ public class UserCommentUseCase {
 	public UserComments read() {
 		return repository.select();
 	}
+
+	public UserComments readId(UserId user){
+		return repository.selectID(user);
+	}
 }
 /*DI Dependency Injection
 	ChatappliのUserCommentUseCaseクラスのrepositoryに焦点を

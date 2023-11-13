@@ -3,7 +3,6 @@ package com.example.chatappli.domain.type;
 import lombok.AccessLevel;
 //import lombok.EqualsAndHashCode;
 import lombok.RequiredArgsConstructor;
-
 import java.util.Objects;
 
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)

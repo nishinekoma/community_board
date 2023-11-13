@@ -18,5 +18,8 @@ public interface UserCommentMapper {
 
 	@Select("sql/selectMyComment.sql")
 	List<UserCommentReadDto> selectById(@Param("userId") String userId);
+
+	@Select("selectUserName.sql")
+	List<UserCommentReadDto> selectId(@Param("userId") String userId);
 }
 //SQLファイル増えたらMapperも増える。

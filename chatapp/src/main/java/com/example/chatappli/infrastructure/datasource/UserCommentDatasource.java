@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Repository;
 
 @RequiredArgsConstructor
@@ -36,6 +37,11 @@ public class UserCommentDatasource implements UserCommentRepository{
 		List<UserCommentReadDto> dtos = mapper.selectById(userId.toString());
 		return  convert(dtos);
 	}
+	@Override
+	public UserComments selectID(UserId userID){ //from @Select("selectUserName.sql")
+		List<UserCommentReadDto> dtos = mapper.selectId(userID.toString());
+		return convert(dtos);
+	}
 
 	public UserComments convert(List<UserCommentReadDto> dtos) {//convert変換するの意味
 		return UserComments.from(
@@ -49,7 +55,7 @@ public class UserCommentDatasource implements UserCommentRepository{
 						)).collect(Collectors.toUnmodifiableList())
 				);
 	}
-	
+	//すべてUserCommentMapper(UserCommentReadDto)からUserCommentにconvertしている。
 
 	/*　UserComment.from(List<UserComment>の型。)
 	 * dtos.stream()で　streamに変換する
