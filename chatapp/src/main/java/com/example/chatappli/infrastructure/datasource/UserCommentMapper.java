@@ -13,13 +13,13 @@ public interface UserCommentMapper {
 	@Insert("sql/insertUserComment.sql")//利用するSQLファイルを指す。
 	void insert(@Param("dto") UserCommentDto dto);
 	
-	@Select("sql/selectUserComment.sql")//
+	@Select("sql/selectUserComment.sql")//data.splのUSER_COMMENT元
 	List<UserCommentReadDto> select();
 
-	@Select("sql/selectMyComment.sql")
+	@Select("sql/selectMyComment.sql")//data.splのUSER_COMMENTもと。
 	List<UserCommentReadDto> selectById(@Param("userId") String userId);
 
-	@Select("selectUserName.sql")
+	@Select("selectUserName.sql")//data.splのAUTHORITIES元。
 	List<UserCommentReadDto> selectId(@Param("userId") String userId);
 }
 //SQLファイル増えたらMapperも増える。

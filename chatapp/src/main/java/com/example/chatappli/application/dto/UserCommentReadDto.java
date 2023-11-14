@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
 @Getter
-public class UserCommentReadDto {
+public class UserCommentReadDto { //schema.sqlが元。初期化でdata.sqlが埋め込まれている。
 	private final int id;
 	private final String userId;
 	private final String name;
