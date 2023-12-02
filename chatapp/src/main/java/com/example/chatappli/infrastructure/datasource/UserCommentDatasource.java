@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 
+import org.apache.ibatis.annotations.Select;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Repository;
 
@@ -20,8 +21,10 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class UserCommentDatasource implements UserCommentRepository{
 	private final UserCommentMapper mapper;
-	
-	public void save(UserComment userComment) {
+
+	//Table USER_COMMENTから全て取得する
+	//@Insert("sql/insertUserComment.sql")
+	public void save(UserComment userComment) {	//this method used UserCommentUseCase
 		//パーツをつなげる。
 		mapper.insert(UserCommentDto.from(userComment));//UserCommentMapper mapperをDI（依存性注入）するように指定します。
 	}
@@ -34,14 +37,18 @@ public class UserCommentDatasource implements UserCommentRepository{
 
 	@Override
 	public UserComments select(UserId userId){
+		//@Select("sql/selectMyComment.sql")//data.splのUSER_COMMENTもと。
+		//List<UserCommentReadDto> selectById(@Param("userId") String userId);
 		List<UserCommentReadDto> dtos = mapper.selectById(userId.toString());
 		return  convert(dtos);
 	}
+	/* また後で
 	@Override
 	public UserComments selectID(UserId userID){ //from @Select("selectUserName.sql")
 		List<UserCommentReadDto> dtos = mapper.selectId(userID.toString());
 		return convert(dtos);
 	}
+	 */
 
 	public UserComments convert(List<UserCommentReadDto> dtos) {//convert変換するの意味
 		return UserComments.from(
@@ -69,5 +76,6 @@ public class UserCommentDatasource implements UserCommentRepository{
 //このようにしておけば、SpringがMyBatisの提供する機能を詰め込んでくれます。
 /*
  * <UserComment> Stream<UserComment> java.util.stream.Stream.map
- * 	(Function<? super UserCommentReadDto, ? extends UserComment> mapper)*/
+ * 	(Function<? super UserCommentReadDto ? extends UserComment> mapper)
+ * */
  

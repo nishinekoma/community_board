@@ -29,7 +29,7 @@ public class UserCommentUseCase {
 	 * @param commentForm ユーザ入力データ
 	 * @return 表示するデータ
 	*/
-	public void write(CommentForm commentForm, User user) {
+	public void write(CommentForm commentForm, User user) {//this meshod Used BoardController
 		//フォームアブジェクトからドメインオブジェクトへ変換
 		UserComment userComment = UserComment.from(
 				commentForm.getName(),
@@ -44,16 +44,19 @@ public class UserCommentUseCase {
 	   * 投稿の取得
 	   * @return 投稿のリスト
 	   */
-	public UserComments read(UserId userId) {
+	public UserComments read(UserId userId) {//this is a method used by UserApiController
 		return repository.select(userId);
 	}
 	public UserComments read() {
 		return repository.select();
 	}
 
+	/*自分で作ったメソッド また後で
 	public UserComments readId(UserId user){
 		return repository.selectID(user);
 	}
+
+	 */
 }
 /*DI Dependency Injection
 	ChatappliのUserCommentUseCaseクラスのrepositoryに焦点を

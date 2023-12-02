@@ -1,0 +1,31 @@
+Springboot開始
+↓
+初期化されるオブジェクト開始　データ等　xmlやymlとかの設定ファイル　beanをコンテナに格納したり
+GetMappingサーバtomcat起動したり　自動でこれら開始
+↓
+http://localhost:8080/user/login
+↓
+成功後　ログイン・サインアップ
+
+login画面
+    -- accountない場合 signupに切り替え　登録と同時にログイン
+        --htmlからaction開始→UserController.java始動
+            -- 初期　@GetMapping
+            -- データ入力語　@PostMapping
+    --　accountある場合　login画面からログインする。
+↓           -- 初動上と同じ
+            -- 成功時　：board.html
+
+掲示板処理
+    --  board.html
+            -- @GetMappingでデータ取得
+                -- この時commet取得しデータをタイムリーフ経由表示
+                -- コメント入力フォーム初期化。オブジェクト準備
+                -- 規律反したらエラー出る。
+            -- @PostMappingでデータを送信
+                -- 元からのデータをDI（外部受け取り）で取得かつコメントも取得
+                -- データ入力されたものをaddObectで追加。属性名commentForm(htmlで指定し受け取る。)
+                -- 書いたもの大丈夫かチェック。
+                -- その後return new ModelAndView("redirect:/board");で
+                　　更新されたModelAndViewをnewして作り@GetMappingされて表示取得
+

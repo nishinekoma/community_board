@@ -1,9 +1,13 @@
 <!DOCTYPE html>
+<!--レイアウトlayout.htmlをデフォルトとするためにxmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"-->
+<!--タイムリーフ使用宣言xmlns:th="http://www.w3.org/1999/xhtml"　”は適用先で今回は”-->
+<!--レイアウトファイル名指定　layout:decorate="~{layout}">-->
 <html 
 		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 		xmlns:th="http://www.w3.org/1999/xhtml"
-		layout:decorate="~{layout}">
+		layout:decorate="~{layout}"><!-- ~チルダはリソース指定宣言-->
 <head>
+
 	<title>掲示板</title>
 <meta charset="UTF-8">
 <meta name="description" content="掲示板です。">
@@ -19,6 +23,9 @@
 				th:replaceはフラグメントの内容でタグを置換する。(comments=${comments})の部分は変数${comments}をcommentsという名前で渡す。
 				${comments}に入っているデータは、Controllerに追加した一文、modelAndView.addObject("comments", userComments.getValues());のuserComments.getValues())です。
 modelAndView.addObject()は第一引数をデータの名前、第二引数をデータとしてthymeleafに渡すメソッドです。-->
+
+		<!-- thread.htmlをreplace(参照・置換)するつまりthread.thmlが挿入される。
+			　かつthread.thmlに属性名comments という名前でデータ${comments}が挿入されている。-->
 		<div th:replace="~{fragments/thread(comments=${comments})}">
 		
 		</div>

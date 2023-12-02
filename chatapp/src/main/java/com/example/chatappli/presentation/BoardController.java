@@ -18,14 +18,38 @@ import com.example.chatappli.domain.model.UserComments;
 @RequiredArgsConstructor//➀final修飾子を探してかつ初期化されていないものを探す。でpublic クラス名(➀に合致したもの　変数名){this.変数名 = 変数名}
 public class BoardController {
 	private final UserCommentUseCase userCommentUseCase;
-	
+
+	/**
+	 *	メソッド名（引数）
+	 *		method viewBord(ModelAndView modelAndView)
+	 *	説明
+	 *		データを読みboard.htmlにデータを渡す用のメソッド。
+	 *	メソッド内説明
+	 *		//board.html 26行目${comments}にして属性名を指定する(htmlでタイムリーフ使用してデータ連携)　
+	 *		addOject("comments",userComments.getValues())
+	 *
+	 *		//HTMLfileのパス設定を行う。
+	 *		modelAndView.setViewName("board");
+	 *
+	 *		//addObjectはThymeleafにデータを渡している。 コメントに書いた時のデータ
+	 *		modelAndView.addObject("commentForm",new CommentForm());
+	 *
+	 * @param modelAndView  型ModelAndView　受け取るためDIされたもの？
+	 * @return modelAndView コメントデータ類が追加された　型ModelAndView
+	 *
+	 * */
 	@GetMapping("/board")
 	public ModelAndView viewBord(ModelAndView modelAndView) {	//HTML(View層)にデータを渡す場合、利用するクラス
+		//return repository(DI form(BoardContraller or UserApiController)からされた UserCommentRepository).select();
 		UserComments userComments = userCommentUseCase.read();
-		System.out.println(userComments.getValues());
+		int i = 0;
+		System.out.println(userComments.getValues()+"表示 :" + i);i++;
+		//board.html 26行目${comments}にして属性名を指定する(htmlでタイムリーフ使用してデータ連携)　thread.同様である。
 		modelAndView.addObject("comments",userComments.getValues());
 		
 		modelAndView.setViewName("board");//	HTMLfileのパス設定を行う。
+		//フォーム初期用オブジェクトを最初に作る.
+		// @GetMapping("/board")だから/boardにアクセスあった時に取得するのでそれ用ってことですかね？
 		modelAndView.addObject("commentForm",new CommentForm());//addObjectはThymeleafにデータを渡している。
 		return modelAndView;
 	}

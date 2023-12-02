@@ -12,6 +12,8 @@ public class UserForm {
     @Pattern(regexp = "^[a-zA-Z0-9]*$")//ログインに使う名前とパスワードは半角英数字
     @NotNull
     private String username;
+    //ここにメアド追加してそれを掲示板でも使いたい！！！　自分で作ったやつ
+
     @Size(max=64)
     @Pattern(regexp = "^[a-zA-Z0-9]*$")
     @NotNull
