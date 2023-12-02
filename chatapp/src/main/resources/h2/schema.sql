@@ -7,6 +7,7 @@ CREATE TABLE IF NOT EXISTS USER_COMMENT ( -- CREATE TABLE テーブルの作成�
 	CREATED_AT DATETIME DEFAULT NOW() NOT NULL, -- 日時型のCREATED_AT列を作成する
 	CONSTRAINT ID_PKC PRIMARY KEY(ID) -- IDをプライマリキーとする（プライマリキーの名前をID_PKCとする）　IDカラムに主キー制約を与えています。
 );
+
 -- DATETIMEは日付と時刻を保持する型。
 -- DEFAULT NOW()は新しい行追加されたとき現在の日時が自動的に更新・挿入
 -- CONSTAINT 制約でありIDを一意の主キーとする。重複不可。

@@ -1,6 +1,7 @@
 package com.example.chatappli.application.usecase;
 
 import com.example.chatappli.application.form.CommentForm;
+import com.example.chatappli.application.form.UserForm;
 import com.example.chatappli.domain.model.UserComment;
 import com.example.chatappli.domain.model.UserCommentRepository;
 import com.example.chatappli.domain.model.UserComments;
@@ -24,6 +25,7 @@ public class UserCommentUseCase {
 	* 		this.repository = repository
 	* 	}
 	*/
+	private String MailAddress;
 	/*
 	 * ユーザの書き込みをDBに反映し、表示するデータをプレゼンテーション層に渡す
 	 * @param commentForm ユーザ入力データ
@@ -34,12 +36,25 @@ public class UserCommentUseCase {
 		UserComment userComment = UserComment.from(
 				commentForm.getName(),
 				user.getUsername(),
-				commentForm.getMailAddress(),
+				MailAddress,//代入済みのものが取得される。
 				commentForm.getComment()
 		);
 		//例えばここで、直近の投稿の一覧を取得し、今回と同じ内容の投稿がないかチェックする。
 		repository.save(userComment);//
 	}
+	//個人　メールアドレスをsignupから登録するためのメソッド
+
+	public void write(UserForm userForm){
+		//メールアドレスを登録　board.htmlの入力のコメント欄の
+		//UserCommentにuserForm.getMailAddress()をセットしたい！
+		//せめてデータにぶち込んでおきたい。
+		//repository.savemail(userForm);
+		MailAddress = (userForm.getMailAddress().toString());
+
+		//UserComment.setMailAddress(userForm.getMailAddress());
+	}
+
+
 	 /**
 	   * 投稿の取得
 	   * @return 投稿のリスト

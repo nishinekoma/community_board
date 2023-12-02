@@ -26,16 +26,17 @@ import javax.validation.ConstraintValidatorContext;
 public class CommentForm {
 	@Nullable
 	@Length(max=20)
-	private String name;
+	private String name = null;
 	
 	//@ExtendedEmailValidator jakartaにしたら＠Email動作したのでよい。
-	@Nullable
+	//signupから登録された物が代入される。
 	@Email
+	@Nullable
 	private String mailAddress;
 	
 	@NotNull
 	@Length(min=1, max=400)
-	private String comment;
+	private String comment = "defo";
 	
 	/*@Emailが機能しないので正規表現を定義した　@ExtendedEmailValidatorを定義する　参考　https://stackoverflow.com/questions/50535214/javax-validation-constraints-email-matching-invalid-email-address*/
 	

@@ -1,8 +1,10 @@
 package com.example.chatappli.presentation;
 
 import ch.qos.logback.core.model.Model;
+import com.example.chatappli.application.form.CommentForm;
 import com.example.chatappli.application.form.UserForm;
 import com.example.chatappli.application.usecase.UserAuthUsecase;
+import com.example.chatappli.application.usecase.UserCommentUseCase;
 import lombok.extern.slf4j.Slf4j;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -23,6 +25,8 @@ import jakarta.servlet.http.HttpServletRequest;
 public class UserController {
 
     private final UserAuthUsecase userAuthUsecase;
+    //個人
+    private final UserCommentUseCase userCommentUseCase;
     @GetMapping
     public ModelAndView loginPage(ModelAndView modelAndView){
         modelAndView.setViewName("user/login");
@@ -57,7 +61,10 @@ public class UserController {
             return modelAndView;
         }
         try {
+            //ユーザ作成
             userAuthUsecase.userCreate(userForm, request);
+            //その時入力されたメアドをCommetFormに登録したい処理
+            userCommentUseCase.write(userForm);
         }catch (Exception e) {
             log.error("ユーザ作成 or ログイン失敗", e);
             return new ModelAndView("redirect:/user");

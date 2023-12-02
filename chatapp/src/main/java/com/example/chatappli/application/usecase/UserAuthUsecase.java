@@ -23,6 +23,8 @@ public class UserAuthUsecase {
                 form.getUsername(),
                 form.getPassword()
         );
+        //個人
+        //request.login(form.getUsername(),form.getEmail(), form.getPassword());
     request.login(form.getUsername(),form.getPassword());
     }
 }

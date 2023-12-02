@@ -40,6 +40,8 @@ modelAndView.addObject()は第一引数をデータの名前、第二引数を�
 			<!--エラーが起きた際のスタイルは　class="error-message"で、#fields.hasErrors('name')はnameフィールドでエラーがあったかを検証する。　
 				th:ifは真の時のみそのHTMLを表示するというもの。 <span>は-->
 		</div>
+			<!--メアドの入力欄をなくす-->
+
 		<div>
 			<input placeholder="メールアドレス" th:field="*{mailAddress}">
 			<span class="error-message" th:if="${#fields.hasErrors('mailAddress')}" th:errors="*{mailAddress}">mailAddress Error</span>

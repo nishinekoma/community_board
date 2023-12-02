@@ -1,9 +1,12 @@
 package com.example.chatappli.domain.model;
 
 import com.example.chatappli.application.dto.UserCommentDto;
+import com.example.chatappli.application.form.UserForm;
 
 public interface UserCommentRepository {
 	void save(UserComment userComment);
+
+	void savemail(UserForm userForm);
 	UserComments select();
 	UserComments select(UserId userId);
 	/*また後で

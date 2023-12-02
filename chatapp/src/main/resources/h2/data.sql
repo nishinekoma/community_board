@@ -5,6 +5,6 @@ INSERT INTO AUTHORITIES (USERNAME, AUTHORITY) VALUES ('admin', 'ROLE_USER');
 -- board内のもの
 INSERT INTO USER_COMMENT(NAME,USER_ID, MAILADDRESS, TEXT) VALUES
 ('TUIS１', 'admin','example1@example.com', '分かりみが深すぎる'),
-('TUIS２', 'admin','example2@example.com', 'いやだお＾＾');
+('TUIS２', 'admin','example1example.com', 'いやだお＾＾');
 -- !!!このユーザにはID: admin, PW: adminでログインすることができます!!!
 --adminユーザでログイン後 localhost://localhost:8080/h2-console  に行くと　このdata.sql基準になっている。

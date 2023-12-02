@@ -1,6 +1,7 @@
 package com.example.chatappli.infrastructure.datasource;
 
 import com.example.chatappli.application.dto.UserCommentDto;
+import com.example.chatappli.application.form.UserForm;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -12,7 +13,7 @@ import java.util.List;
 public interface UserCommentMapper {
 	@Insert("sql/insertUserComment.sql")//利用するSQLファイルを指す。Table USER_COMMENTから全て取得する
 	void insert(@Param("dto") UserCommentDto dto);
-	
+
 	@Select("sql/selectUserComment.sql")//data.splのUSER_COMMENT元
 	List<UserCommentReadDto> select();
 
@@ -20,8 +21,12 @@ public interface UserCommentMapper {
 	List<UserCommentReadDto> selectById(@Param("userId") String userId);
 
 	/* また後で
-	@Select("selectUserName.sql")//data.splのAUTHORITIES元。
+	@Select("selectUserName.sql")//mdata.splのAUTHORITIES元。
 	List<UserCommentReadDto> selectId(@Param("userId") String userId);
 	 */
+	//個人　USER_COMMENTテーブルのUSER_COMMENTにデータをぶち込む
+	//signupから取ってくる。
+	@Insert("sql/insertMailAddress.sql")//利用するSQLファイルを指す。mailaddressのみ取得
+	void insertmail(@Param("dto") UserForm dto);
 }
 //SQLファイル増えたらMapperも増える。

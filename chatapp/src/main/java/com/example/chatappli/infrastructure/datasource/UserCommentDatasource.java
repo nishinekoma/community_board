@@ -1,5 +1,6 @@
 package com.example.chatappli.infrastructure.datasource;
 
+import com.example.chatappli.application.form.UserForm;
 import com.example.chatappli.domain.model.UserComment;
 import com.example.chatappli.application.dto.UserCommentDto;
 import com.example.chatappli.domain.model.UserCommentRepository;
@@ -28,13 +29,15 @@ public class UserCommentDatasource implements UserCommentRepository{
 		//パーツをつなげる。
 		mapper.insert(UserCommentDto.from(userComment));//UserCommentMapper mapperをDI（依存性注入）するように指定します。
 	}
-
+	//個人　mail初期化用　mail
+	public void savemail(UserForm userForm){
+		mapper.insertmail(userForm);
+	}
 	@Override
 	public UserComments select() {
 		List<UserCommentReadDto> dtos = mapper.select();
 		return convert(dtos);
 	}
-
 	@Override
 	public UserComments select(UserId userId){
 		//@Select("sql/selectMyComment.sql")//data.splのUSER_COMMENTもと。

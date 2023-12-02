@@ -4,11 +4,12 @@ import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
 import lombok.RequiredArgsConstructor;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
 @EqualsAndHashCode
-public class MailAddress {
+public class MailAddress implements Serializable {
 	private final String value;
 	
 	public static MailAddress from(String mailAddress) {
