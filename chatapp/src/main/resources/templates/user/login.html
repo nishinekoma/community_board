@@ -62,14 +62,6 @@
                       </div>
                     <!--/username form-->
 
-                    <!--/mailaddress form for個人追加-->
-                      <div class="form-group mt-2"><!--commentformテーブルに保存したいため-->
-                        <input type="text" class="form-style" placeholder="Email" th:field="*{mailAddress}"><!--thread.thmlと合わせる　mailAddress-->
-                        <i class="input-icon uil uil-at"></i>
-                        <span class="error-message" th:if="${#fields.hasErrors('mailAddress')}" th:errors="*{mailAddress}">email Error</span>
-                      </div>
-                    <!---/mailaddress from--->
-
                     <!--password form-->
                       <div class="form-group mt-2">
                         <input type="password" class="form-style" placeholder="Password" th:field="*{password}">
@@ -77,8 +69,21 @@
                         <span class="error-message" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">password Error</span>
                       </div>
                     <!--/password form-->
-                      <button class="btn mt-4">Register</button>
                     </form>
+
+                    <!--/mailaddress form for個人追加-->
+                    <form  method="POST" th:action="@{/user/signup}" th:object="${mail}}">
+                      <div class="form-group mt-2"><!--commentformテーブルに保存したいため-->
+                        <input type="text" class="form-style" placeholder="Email" th:field="*{mailAddress}"><!--thread.thmlと合わせる　mailAddress-->
+                        <i class="input-icon uil uil-at"></i>
+                        <span class="error-message" th:if="${#fields.hasErrors('mailAddress')}" th:errors="*{mailAddress}">email Error</span>
+                      </div>
+                    </form>
+                    <!---/mailaddress from--->
+                    <!--2つのフォームを一括で送信するボタン-->
+                    <!-- ボタンをクリックしたときに2つのフォームを一括で送信するスクリプト -->
+                    <script src="form.js" defer></script><!--deferで非同期ダウンロードして解析されるまでHTMLの解析をブロックしないようにする-->
+                    <button class="jsform btn mt-4">Register</button>
                     <!---/from--->
                   </div>
                 </div>
