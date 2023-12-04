@@ -29,3 +29,34 @@ login画面
                 -- その後return new ModelAndView("redirect:/board");で
                 　　更新されたModelAndViewをnewして作り@GetMappingされて表示取得
 
+12/02
+あすやること
+signupで登録したメールアドレスとUserIDを連結させ、掲示板でもう一回ログインした
+時にメールアドレスを元に探してメールアドレスとUserIDを表示
+12/03
+今日
+登録時signup時
+    課題１
+        signup時に送信されたAUTHORITIESテーブルからUSER＿IDとMailを
+        新しいテーブルに登録する必要がある。
+        掲示板に送信しないとUserCommentに登録されない。
+
+    対策
+        新しいテーブルをクリエイトしておいて　MailとAUTHORITIESテーブルからUSER＿IDを抽出し
+        新しいテーブルに保存しておく。そして紐ずけする。
+
+        で、掲示板で送信する時に@Validated @ModelAttributeで受け取りMailとAUTHORITIESを新しいテーブルから
+        USER_IDもキーに紐図ける抽出し、それを掲示板で表示する。しかない。
+
+
+signup
+
+USERCommentテーブルに登録しないといけないので。
+AUTHORITIESテーブルのUSER_IDとUSER_COMMENTテーブルのMailAddress
+の紐ずけをする
+
+
+ログアウト時
+
+login時
+AUTHORITIESテーブルのUSERIDを抽出し、その時に登録

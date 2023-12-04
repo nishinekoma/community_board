@@ -47,7 +47,7 @@ public class UserCommentUseCase {
 	public void write(UserForm userForm){
 		//メールアドレスを登録　board.htmlの入力のコメント欄の
 		//UserCommentにuserForm.getMailAddress()をセットしたい！
-		//せめてデータにぶち込んでおきたい。
+		//せめてデータにぶち込んでおきたい。 nullで返されて終わった。
 		//repository.savemail(userForm);
 		MailAddress = (userForm.getMailAddress().toString());
 

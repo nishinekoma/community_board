@@ -42,6 +42,7 @@ public class UserController {
     public ModelAndView signup(ModelAndView modelAndView){
         modelAndView.setViewName("user/signup");
         modelAndView.addObject("userForm", new UserForm());
+        //メアド登録用
         return modelAndView;
     }
     /**

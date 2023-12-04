@@ -49,7 +49,7 @@ public class BoardController {
 		
 		modelAndView.setViewName("board");//	HTMLfileのパス設定を行う。
 		//フォーム初期用オブジェクトを最初に作る.
-		// @GetMapping("/board")だから/boardにアクセスあった時に取得するのでそれ用ってことですかね？
+		// @GetMapping("/board")だから/boardにアクセスあった時に取得する
 		modelAndView.addObject("commentForm",new CommentForm());//addObjectはThymeleafにデータを渡している。
 		return modelAndView;
 	}
