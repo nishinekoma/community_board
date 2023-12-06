@@ -11,3 +11,15 @@ public class ChatAppApplication {
 //Springbootにはmainメソッドが必須。ないとエラーになる。
 //https://zenn.dev/angelica/books/52be1e365c61ea/viewer/7b55e1
 
+/*
+# MIME type configuration for JavaScript files
+  mvc:
+    static-path-pattern: static/**
+  resources:
+    add-mappings: false
+server:
+  tomcat:
+   additional-tld-skip-patterns: "*.jar"
+   mime-mapping:
+    js: application/javascript
+* */

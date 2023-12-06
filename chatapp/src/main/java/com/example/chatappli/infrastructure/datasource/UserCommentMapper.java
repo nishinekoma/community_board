@@ -28,5 +28,10 @@ public interface UserCommentMapper {
 	//signupから取ってくる。
 	@Insert("sql/insertMailAddress.sql")//利用するSQLファイルを指す。mailaddressのみ取得
 	void insertmail(@Param("dto") UserForm dto);
+
+	//User_IDとmailAddressを入れる。 個人
+	@Insert("sql/insertRelationUserId_Mail.sql")
+	void relationwite(@Param("dto") UserForm dto);//これに変換する
+
 }
 //SQLファイル増えたらMapperも増える。

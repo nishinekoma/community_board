@@ -72,7 +72,7 @@
                     </form>
 
                     <!--/mailaddress form for個人追加-->
-                    <form  method="POST" th:action="@{/user/signup}" th:object="${mail}}">
+                    <form  method="POST" th:action="@{/user/signup}" th:object="${mailForm}">
                       <div class="form-group mt-2"><!--commentformテーブルに保存したいため-->
                         <input type="text" class="form-style" placeholder="Email" th:field="*{mailAddress}"><!--thread.thmlと合わせる　mailAddress-->
                         <i class="input-icon uil uil-at"></i>
@@ -82,7 +82,7 @@
                     <!---/mailaddress from--->
                     <!--2つのフォームを一括で送信するボタン-->
                     <!-- ボタンをクリックしたときに2つのフォームを一括で送信するスクリプト -->
-                    <script src="form.js" defer></script><!--deferで非同期ダウンロードして解析されるまでHTMLの解析をブロックしないようにする-->
+                    <script type="text/javascript" src="form.js" th:src="@{/js/form.js}" defer></script><!--deferで非同期ダウンロードして解析されるまでHTMLの解析をブロックしないようにする-->
                     <button class="jsform btn mt-4">Register</button>
                     <!---/from--->
                   </div>

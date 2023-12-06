@@ -14,11 +14,12 @@ public class UserForm {
     @NotNull
     private String username;
 
+
+    //別のオブジェクトに移動
     /*htmlで別々のフォームに飛ばす（1ボタンで各オブジェクト）が無理だったのでこうする*/
     //ここにメアド追加してそれを掲示板でも使いたい！！！　自分で作ったやつ
     @NotNull
     private MailAddress mailAddress;//login.html signup69に合わせる
-
 
     @Size(max=64)
     @Pattern(regexp = "^[a-zA-Z0-9]*$")

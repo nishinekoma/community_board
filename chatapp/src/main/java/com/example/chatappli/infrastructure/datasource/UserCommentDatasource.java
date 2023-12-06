@@ -1,12 +1,10 @@
 package com.example.chatappli.infrastructure.datasource;
 
+import com.example.chatappli.application.form.MailForm;
 import com.example.chatappli.application.form.UserForm;
-import com.example.chatappli.domain.model.UserComment;
+import com.example.chatappli.domain.model.*;
 import com.example.chatappli.application.dto.UserCommentDto;
-import com.example.chatappli.domain.model.UserCommentRepository;
-import com.example.chatappli.domain.model.UserComments;
 import com.example.chatappli.application.dto.UserCommentReadDto;
-import com.example.chatappli.domain.model.UserId;
 
 import lombok.RequiredArgsConstructor;
 
@@ -20,7 +18,7 @@ import org.springframework.stereotype.Repository;
 
 @RequiredArgsConstructor
 @Repository
-public class UserCommentDatasource implements UserCommentRepository{
+public class UserCommentDatasource implements UserCommentRepository, RelationUser_ID_Mail_Repository {
 	private final UserCommentMapper mapper;
 
 	//Table USER_COMMENTから全て取得する
@@ -33,6 +31,13 @@ public class UserCommentDatasource implements UserCommentRepository{
 	public void savemail(UserForm userForm){
 		mapper.insertmail(userForm);
 	}
+	//UserIdとMailアドレスをデータに入れる
+	@Override
+	public void relationwrite(UserForm userForm, MailForm mailForm){
+		userForm.setMailAddress(mailForm.getMailAddress());
+		mapper.relationwite(userForm);//mailaddressを織り込み済み
+	}
+
 	@Override
 	public UserComments select() {
 		List<UserCommentReadDto> dtos = mapper.select();

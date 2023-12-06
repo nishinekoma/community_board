@@ -1,11 +1,9 @@
 package com.example.chatappli.application.usecase;
 
 import com.example.chatappli.application.form.CommentForm;
+import com.example.chatappli.application.form.MailForm;
 import com.example.chatappli.application.form.UserForm;
-import com.example.chatappli.domain.model.UserComment;
-import com.example.chatappli.domain.model.UserCommentRepository;
-import com.example.chatappli.domain.model.UserComments;
-import com.example.chatappli.domain.model.UserId;
+import com.example.chatappli.domain.model.*;
 import org.springframework.security.core.userdetails.User;
 
 import lombok.RequiredArgsConstructor;
@@ -31,6 +29,7 @@ public class UserCommentUseCase {
 	 * @param commentForm ユーザ入力データ
 	 * @return 表示するデータ
 	*/
+
 	public void write(CommentForm commentForm, User user) {//this meshod Used BoardController
 		//フォームアブジェクトからドメインオブジェクトへ変換
 		UserComment userComment = UserComment.from(
@@ -43,7 +42,6 @@ public class UserCommentUseCase {
 		repository.save(userComment);//
 	}
 	//個人　メールアドレスをsignupから登録するためのメソッド
-
 	public void write(UserForm userForm){
 		//メールアドレスを登録　board.htmlの入力のコメント欄の
 		//UserCommentにuserForm.getMailAddress()をセットしたい！

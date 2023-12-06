@@ -14,7 +14,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import com.example.chatappli.application.usecase.UserCommentUseCase;
 import com.example.chatappli.domain.model.UserComments;
-@Controller//
+@Controller
 @RequiredArgsConstructor//➀final修飾子を探してかつ初期化されていないものを探す。でpublic クラス名(➀に合致したもの　変数名){this.変数名 = 変数名}
 public class BoardController {
 	private final UserCommentUseCase userCommentUseCase;
