@@ -1,5 +1,6 @@
 package com.example.chatappli.infrastructure.datasource;
 
+import com.example.chatappli.application.dto.RelationDto;
 import com.example.chatappli.application.dto.UserCommentDto;
 import com.example.chatappli.application.form.UserForm;
 import org.apache.ibatis.annotations.Insert;
@@ -31,7 +32,7 @@ public interface UserCommentMapper {
 
 	//User_IDとmailAddressを入れる。 個人
 	@Insert("sql/insertRelationUserId_Mail.sql")
-	void relationwite(@Param("dto") UserForm dto);//これに変換する
+	void relationwite(@Param("dto") RelationDto dto);//これに変換する
 
 }
 //SQLファイル増えたらMapperも増える。

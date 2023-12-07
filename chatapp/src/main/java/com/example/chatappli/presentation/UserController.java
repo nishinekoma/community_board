@@ -9,6 +9,7 @@ import com.example.chatappli.application.usecase.UserAuthUsecase;
 import com.example.chatappli.application.usecase.UserCommentUseCase;
 import lombok.extern.slf4j.Slf4j;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
@@ -69,6 +70,7 @@ public class UserController {
         try {
             System.out.println(userForm.getUsername());
             //ユーザ作成
+            SecurityContextHolder.clearContext();//既存の認証情報をクリア
             userAuthUsecase.userCreate(userForm, request);
             //その時入力されたメアドをCommetFormに登録したい処理
             //userCommentUseCase.write(userForm);

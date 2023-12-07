@@ -1,5 +1,6 @@
 package com.example.chatappli.infrastructure.datasource;
 
+import com.example.chatappli.application.dto.RelationDto;
 import com.example.chatappli.application.form.MailForm;
 import com.example.chatappli.application.form.UserForm;
 import com.example.chatappli.domain.model.*;
@@ -34,8 +35,8 @@ public class UserCommentDatasource implements UserCommentRepository, RelationUse
 	//UserIdとMailアドレスをデータに入れる
 	@Override
 	public void relationwrite(UserForm userForm, MailForm mailForm){
-		//userForm.setMailAddress(mailForm.getMailAddress());
-		mapper.relationwite(userForm);//mailaddressを織り込み済み
+		userForm.setMailAddress(mailForm.getMailAddress());
+		mapper.relationwite(RelationDto.from(userForm));//mailaddressを織り込み済み
 	}
 
 	@Override
