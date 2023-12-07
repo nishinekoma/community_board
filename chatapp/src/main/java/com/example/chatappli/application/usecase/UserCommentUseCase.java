@@ -35,7 +35,7 @@ public class UserCommentUseCase {
 		UserComment userComment = UserComment.from(
 				commentForm.getName(),
 				user.getUsername(),
-				MailAddress,//代入済みのものが取得される。
+				commentForm.getMailAddress(),
 				commentForm.getComment()
 		);
 		//例えばここで、直近の投稿の一覧を取得し、今回と同じ内容の投稿がないかチェックする。
@@ -46,7 +46,7 @@ public class UserCommentUseCase {
 		//メールアドレスを登録　board.htmlの入力のコメント欄の
 		//UserCommentにuserForm.getMailAddress()をセットしたい！
 		//せめてデータにぶち込んでおきたい。 nullで返されて終わった。
-		//repository.savemail(userForm);
+		repository.savemail(userForm);
 		MailAddress = (userForm.getMailAddress().toString());
 
 		//UserComment.setMailAddress(userForm.getMailAddress());

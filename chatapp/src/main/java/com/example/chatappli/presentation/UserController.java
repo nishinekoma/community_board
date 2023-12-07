@@ -58,21 +58,20 @@ public class UserController {
      */
     @PostMapping("signup")//ここから登録受け取り　htmlから受け取っている。
     public ModelAndView register(
-            @Validated @ModelAttribute UserForm userForm,
-            @Validated @ModelAttribute MailForm mailForm,
+            @Validated @ModelAttribute("userForm") UserForm userForm,
+            @Validated @ModelAttribute("mailForm") MailForm mailForm,
             BindingResult bindingResult,
             HttpServletRequest request) {
         if(bindingResult.hasErrors()){
             ModelAndView modelAndView = new ModelAndView("user/signup");
-            modelAndView.addObject("userForm", userForm);
-            modelAndView.addObject("mailForm", mailForm);//個人追加
             return modelAndView;
         }
         try {
+            System.out.println(userForm.getUsername());
             //ユーザ作成
             userAuthUsecase.userCreate(userForm, request);
             //その時入力されたメアドをCommetFormに登録したい処理
-            userCommentUseCase.write(userForm);
+            //userCommentUseCase.write(userForm);
             //入力されたmailとUser_IDを紐づけ
             relationUserID_mail.relationwite(userForm,mailForm);
         }catch (Exception e) {

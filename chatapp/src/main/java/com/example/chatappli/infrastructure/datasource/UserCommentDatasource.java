@@ -34,7 +34,7 @@ public class UserCommentDatasource implements UserCommentRepository, RelationUse
 	//UserIdとMailアドレスをデータに入れる
 	@Override
 	public void relationwrite(UserForm userForm, MailForm mailForm){
-		userForm.setMailAddress(mailForm.getMailAddress());
+		//userForm.setMailAddress(mailForm.getMailAddress());
 		mapper.relationwite(userForm);//mailaddressを織り込み済み
 	}
 
