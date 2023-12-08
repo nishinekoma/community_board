@@ -12,6 +12,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -60,11 +61,17 @@ public class UserController {
     @PostMapping("signup")//ここから登録受け取り　htmlから受け取っている。
     public ModelAndView register(
             @Validated @ModelAttribute("userForm") UserForm userForm,
-            @Validated @ModelAttribute("mailForm") MailForm mailForm,
             BindingResult bindingResult,
+            @Validated @ModelAttribute("mailForm") MailForm mailForm,
             HttpServletRequest request) {
         if(bindingResult.hasErrors()){
-            ModelAndView modelAndView = new ModelAndView("user/signup");
+            ModelAndView modelAndView = new ModelAndView("/user/login");
+            modelAndView.addObject("userForm",userForm);//エラー時の元の情報を残すために返す。
+            modelAndView.addObject("mailForm",mailForm);
+            //ログに出す用。
+            for (ObjectError error : bindingResult.getAllErrors()) {
+                log.error("Validation error: {}", error.getDefaultMessage());
+            }
             return modelAndView;
         }
         try {

@@ -39,7 +39,7 @@ public class CommentForm {
 	private String comment = "defo";
 	
 	/*@Emailが機能しないので正規表現を定義した　@ExtendedEmailValidatorを定義する　参考　https://stackoverflow.com/questions/50535214/javax-validation-constraints-email-matching-invalid-email-address*/
-	
+	/*
 	@Email(message="Please provide a valid email address")
 	@Pattern(regexp=".+@.+\\..+", message="Please provide a valid email address")
 	@Target({ElementType.FIELD, ElementType.METHOD, ElementType.ANNOTATION_TYPE})
@@ -67,4 +67,5 @@ public class CommentForm {
 	        return value != null && value.matches(".+@.+\\..+");
 	    }
 	}
+	 */
 }

@@ -57,7 +57,12 @@ AUTHORITIESテーブルのUSER_IDとUSER_COMMENTテーブルのMailAddress
     工程
     ・login内のhtmlのsignupを編集、二つのth;object分岐しデータを別々送信する
         ・一括で送信したいためjsを使う。
-    今
+    
+    ・データベースに保存することはできた
+
+    ・メールアドレスとして確認する。
+
+    ・
         ・送信されたもう一つのデータをjavaの@(/signup)で受け取り
             ・mailaddressが重複してないかデータを探し
                 〇　そのまま登録処理

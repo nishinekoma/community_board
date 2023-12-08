@@ -9,8 +9,8 @@ import jakarta.validation.constraints.Size;
 import com.example.chatappli.domain.type.MailAddress;//個人追加
 @Data//ユーザログイン、登録のためのFormクラス　と　email初期化クラス
 public class UserForm {
-    @Size(max=20)
-    @Pattern(regexp = "^[a-zA-Z0-9]*$")//ログインに使う名前とパスワードは半角英数字
+    @Size(max=20, message = "0から20のサイズにしてください。")
+    @Pattern(regexp = "^[a-zA-Z0-9]*$", message = "半角英数字のみにしてください。")//ログインに使う名前とパスワードは半角英数字
     @NotNull
     private String username;
 
@@ -21,8 +21,8 @@ public class UserForm {
     @NotNull
     private MailAddress mailAddress;//login.html signup69に合わせる
 
-    @Size(max=64)
-    @Pattern(regexp = "^[a-zA-Z0-9]*$")
+    @Size(max=64, message = "0から64のサイズにしてください。")
+    @Pattern(regexp = "^[a-zA-Z0-9]*$" ,message = "半角英数字のみにしてください。")
     @NotNull
     private String password;
 }

@@ -7,6 +7,7 @@ import com.example.chatappli.domain.model.*;
 import com.example.chatappli.application.dto.UserCommentDto;
 import com.example.chatappli.application.dto.UserCommentReadDto;
 
+import com.example.chatappli.domain.type.MailAddress;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;
@@ -35,7 +36,7 @@ public class UserCommentDatasource implements UserCommentRepository, RelationUse
 	//UserIdとMailアドレスをデータに入れる
 	@Override
 	public void relationwrite(UserForm userForm, MailForm mailForm){
-		userForm.setMailAddress(mailForm.getMailAddress());
+		userForm.setMailAddress(MailAddress.from(mailForm.getMailAddress()));
 		mapper.relationwite(RelationDto.from(userForm));//mailaddressを織り込み済み
 	}
 
