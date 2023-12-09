@@ -1,6 +1,6 @@
 package com.example.chatappli.application.dto;
 
-import com.example.chatappli.domain.model.UserComment;
+
 import com.example.chatappli.domain.model.UserComments;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -35,6 +35,6 @@ public class UserCommentReadDto { //schema.sqlが元。初期化でdata.sqlが�
 					 comment.getComment().toString(),
 					 LocalDateTime.parse(comment.getDateTime().toString())
 			 )
-	 ).collect(Collectors.toUnmodifiableList());
+	 ).collect(Collectors.toUnmodifiableList());//変更不可unmodifiableなList返す。　これもすごい。
  }
 }

@@ -41,16 +41,6 @@ public class UserCommentUseCase {
 		//例えばここで、直近の投稿の一覧を取得し、今回と同じ内容の投稿がないかチェックする。
 		repository.save(userComment);//
 	}
-	//個人　メールアドレスをsignupから登録するためのメソッド
-	public void write(UserForm userForm){
-		//メールアドレスを登録　board.htmlの入力のコメント欄の
-		//UserCommentにuserForm.getMailAddress()をセットしたい！
-		//せめてデータにぶち込んでおきたい。 nullで返されて終わった。
-		repository.savemail(userForm);
-		MailAddress = (userForm.getMailAddress().toString());
-
-		//UserComment.setMailAddress(userForm.getMailAddress());
-	}
 
 
 	 /**

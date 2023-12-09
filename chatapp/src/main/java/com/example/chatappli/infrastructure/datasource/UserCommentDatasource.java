@@ -29,10 +29,6 @@ public class UserCommentDatasource implements UserCommentRepository, RelationUse
 		//パーツをつなげる。
 		mapper.insert(UserCommentDto.from(userComment));//UserCommentMapper mapperをDI（依存性注入）するように指定します。
 	}
-	//個人　mail初期化用　mail
-	public void savemail(UserForm userForm){
-		mapper.insertmail(userForm);
-	}
 	//UserIdとMailアドレスをデータに入れる
 	@Override
 	public void relationwrite(UserForm userForm, MailForm mailForm){
@@ -41,7 +37,7 @@ public class UserCommentDatasource implements UserCommentRepository, RelationUse
 	}
 
 	@Override
-	public UserComments select() {
+	public UserComments select() {//userCommentUseCase
 		List<UserCommentReadDto> dtos = mapper.select();
 		return convert(dtos);
 	}
@@ -52,13 +48,6 @@ public class UserCommentDatasource implements UserCommentRepository, RelationUse
 		List<UserCommentReadDto> dtos = mapper.selectById(userId.toString());
 		return  convert(dtos);
 	}
-	/* また後で
-	@Override
-	public UserComments selectID(UserId userID){ //from @Select("selectUserName.sql")
-		List<UserCommentReadDto> dtos = mapper.selectId(userID.toString());
-		return convert(dtos);
-	}
-	 */
 
 	public UserComments convert(List<UserCommentReadDto> dtos) {//convert変換するの意味
 		return UserComments.from(

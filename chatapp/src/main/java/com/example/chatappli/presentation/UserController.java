@@ -40,6 +40,7 @@ public class UserController {
         modelAndView.addObject("mailForm",new MailForm());
         return modelAndView;
     }
+
     /**
      * 登録ページの表示
      * @return
@@ -58,13 +59,15 @@ public class UserController {
      * @param bindingResult
      * @return
      */
+    // BindingResultを二つ入れるのは一つのインスタンスにつき一つしか対応できないため。
     @PostMapping("signup")//ここから登録受け取り　htmlから受け取っている。
     public ModelAndView register(
             @Validated @ModelAttribute("userForm") UserForm userForm,
             BindingResult bindingResult,
             @Validated @ModelAttribute("mailForm") MailForm mailForm,
+            BindingResult bindingResult1,
             HttpServletRequest request) {
-        if(bindingResult.hasErrors()){
+        if(bindingResult.hasErrors() || bindingResult1.hasErrors()){
             ModelAndView modelAndView = new ModelAndView("/user/login");
             modelAndView.addObject("userForm",userForm);//エラー時の元の情報を残すために返す。
             modelAndView.addObject("mailForm",mailForm);

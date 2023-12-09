@@ -21,14 +21,6 @@ public interface UserCommentMapper {
 	@Select("sql/selectMyComment.sql")//data.splのUSER_COMMENTもと。 結果UserApiControllerによって使われている
 	List<UserCommentReadDto> selectById(@Param("userId") String userId);
 
-	/* また後で
-	@Select("selectUserName.sql")//mdata.splのAUTHORITIES元。
-	List<UserCommentReadDto> selectId(@Param("userId") String userId);
-	 */
-	//個人　USER_COMMENTテーブルのUSER_COMMENTにデータをぶち込む
-	//signupから取ってくる。
-	@Insert("sql/insertMailAddress.sql")//利用するSQLファイルを指す。mailaddressのみ取得
-	void insertmail(@Param("dto") UserForm dto);
 
 	//User_IDとmailAddressを入れる。 個人
 	@Insert("sql/insertRelationUserId_Mail.sql")
