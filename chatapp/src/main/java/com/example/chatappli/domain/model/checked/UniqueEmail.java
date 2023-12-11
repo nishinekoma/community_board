@@ -1,5 +1,7 @@
 package com.example.chatappli.domain.model.checked;
 
+import com.example.chatappli.application.usecase.UniqueEmailValidator;
+
 import javax.validation.Constraint;
 import javax.validation.Payload;
 import java.lang.annotation.Documented;
