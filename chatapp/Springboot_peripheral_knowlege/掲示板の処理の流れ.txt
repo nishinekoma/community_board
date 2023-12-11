@@ -65,7 +65,7 @@ AUTHORITIESテーブルのUSER_IDとUSER_COMMENTテーブルのMailAddress
     ・重複しているかの確認。    $$ now
         ・signup自
         ・UserCommentDatasourceのmethod relationwrite 内で行う
-            ・チェックメソッド
+            ・チェックメソッド　※今回はクラスにリスト化してやってみる。
                 ・重複あり　：エラーを返す。
                     ・既に登録されています！！　と　表示桁数を表示する
                         ・html th:if="${#fields.hasErrors('mailForm.mailAddress')}" th:errors="${mailForm.mailAddress}">email Error</span>
