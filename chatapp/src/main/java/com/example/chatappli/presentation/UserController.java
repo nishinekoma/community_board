@@ -69,6 +69,7 @@ public class UserController {
             @Validated @ModelAttribute("mailForm") MailForm mailForm,
             BindingResult bindingResult1,
             HttpServletRequest request) {
+        //ここはフロントの処理を書くべき
         if(bindingResult.hasErrors() || bindingResult1.hasErrors()){
             ModelAndView modelAndView = new ModelAndView("/user/login");
             modelAndView.addObject("userForm",userForm);//エラー時の元の情報を残すために返す。
@@ -79,17 +80,19 @@ public class UserController {
             }
             return modelAndView;
         }
+        //ここのtryにはバックエンドの処理を書くべき
         try {
-            System.out.println(userForm.getUsername());
+            System.out.println(userForm.getUsername());//debug
             //ユーザ作成
             SecurityContextHolder.clearContext();//既存の認証情報をクリア
             userAuthUsecase.userCreate(userForm, request);
             //重複処理
-            uniqueEmailValidator.isValid(mailForm,)
-            //その時入力されたメアドをCommetFormに登録したい処理
-            //userCommentUseCase.write(userForm);
-            //入力されたmailとUser_IDを紐づけ
-            relationUserID_mail.relationwite(userForm,mailForm);
+            if(uniqueEmailValidator.isValid(mailForm.getMailAddress(),null)) {
+                //その時入力されたメアドをCommetFormに登録したい処理
+                //userCommentUseCase.write(userForm);
+                //入力されたmailとUser_IDを紐づけ
+                relationUserID_mail.relationwite(userForm, mailForm);
+            }
         }catch (Exception e) {
             log.error("ユーザ作成 or ログイン失敗", e);
             return new ModelAndView("redirect:/user");

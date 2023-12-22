@@ -1,5 +1,6 @@
 package com.example.chatappli.application.form;
 //個人追加
+import com.example.chatappli.domain.model.checked.UniqueEmail;
 import jakarta.validation.constraints.Email;
 import lombok.Data;
 
@@ -18,8 +19,9 @@ public class MailForm {
 
     @Email//オブジェクトにつけるとエラー出たので String型にする
     @Nullable
+    @UniqueEmail
     private  String mailAddress;//login.html signup69に合わせる
 
-    private List<MailForm> mailFormList;//重複チェック用メールアドレスのリスト
+    //private List<MailForm> mailFormList;//重複チェック用メールアドレスのリスト
 
 }

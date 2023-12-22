@@ -20,6 +20,5 @@ public class RelationUserID_Mail {
     private RelationUser_ID_Mail_Repository relationUser_id_mail_repository;
     public void relationwite(UserForm userForm,MailForm mailForm){
         relationUser_id_mail_repository.relationwrite(userForm,mailForm);
-    };
-
+    }
 }

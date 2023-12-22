@@ -12,7 +12,6 @@ import java.util.stream.Collectors;
 @Getter
 public class MailReadDto {
     private final String mailAddress;
-
     public static List<MailReadDto> from(List<MailForm> mailFormList){//String型のメアドが格納されてる
         //MailFormのリスト
        return mailFormList.stream().map(

@@ -8,3 +8,6 @@ INSERT INTO USER_COMMENT(NAME,USER_ID, MAILADDRESS, TEXT) VALUES
 ('TUIS２', 'admin','example1example.com', 'いやだお＾＾');
 -- !!!このユーザにはID: admin, PW: adminでログインすることができます!!!
 --adminユーザでログイン後 localhost://localhost:8080/h2-console  に行くと　このdata.sql基準になっている。
+INSERT INTO RELATION(USER_ID, MAILADDRESS) VALUES
+('admin','admin@example.com');
+

@@ -823,6 +823,7 @@ assign(アサイン)割り当て、地位の任命、業務の割り当て、
 individual(インディビジュアル)個々の、各個の、ー個人の、個人的な、特有の
 re-arranging(リーアレンジング)rearrangeの現在分詞（...を）再び整備する、再配置、再び配列する　再編成する
 arrange(アレンジ)動詞｝整える、配列する、配置する、順序立てる、準備する
+preparation(プレパレーション)
 execute(エグゼキュート)実行する
 executing(エグゼキューティング)｛現在分詞の場合｝実行中　
 Stopping　妨げている
@@ -879,6 +880,8 @@ specify(スペシフィ)※指定する、明確に述べる、特定する　�
 specification(スペシフィケイション)仕様書　設計書　明細
 specific(スペシフィック)固有の<To> , <..に>特有の
 valid(バリッド)　有効な　確かな　効力がある
+validator(バリデータ)　データの妥当性を検証するための仕組みや部品(コンポーネント)
+                    ※　主に不正確なデータを排除するためのもの。
 indicate(インディケイト) ※直接的に示す 簡単に述べる　動詞：指し示す、指摘する、示す、
 conformance(コンフォーマンス)　規格適合性　適合
 conform(一致する) 一致する　従う　ニュアンス：合わせる
@@ -930,6 +933,12 @@ Unmodifiable(アンモディファェボウ)　変更不可能な
 modifiable(モディフェイボウ)　変更可能な
 disallows(ディサロウズ)ニュアンス：～を不許可にする。
 registered(レジスタード)　形容詞：登録された、記名の
+handled(ハンドレッド)処理された、取り扱う。
+constraint(コ(カ)ンストレイント)強制、束縛、制約。
+alter(アォルター)　部分的に変える、改造する
+alterd()部分的に変更を加える。
+concurrently(コンクレントリィ)副詞: 時に、(...と)ともに、
+guarantee(ギャランティ)保証書、保証、約束
 /-tango 単語　ここまで-/
 英語文法
 前置詞の後ろには目的語
@@ -949,6 +958,8 @@ to + 動詞の原形　~するために
 「  自分だけで意味が成り立つ動詞」。目的語は必要ありません。
         ・I like watching movies.　＝like＋目的語watching　//have、give、likeなども他動詞です
         ・I like to watch movies.　＝like＋目的語to watc
+
+for a  「ある」「特定の」
 英語熟語
 英語例文おすすめサイト
 https://context.reverso.net/%E7%BF%BB%E8%A8%B3/%E8%8B%B1%E8%AA%9E-%E6%97%A5%E6%9C%AC%E8%AA%9E/then+enter
