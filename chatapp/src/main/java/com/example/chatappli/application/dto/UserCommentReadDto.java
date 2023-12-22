@@ -25,6 +25,7 @@ public class UserCommentReadDto { //schema.sqlが元。初期化でdata.sqlが�
  * @param
  * @return
  */
+// UserApiControllerで使用している。　ユーザーコメントをRestAPIで取得　WEBに表示する
  public static List<UserCommentReadDto> from(UserComments comments){
 	 return comments.getValues().stream().map(
 			 comment -> new UserCommentReadDto(

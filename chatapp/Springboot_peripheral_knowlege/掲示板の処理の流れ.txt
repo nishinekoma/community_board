@@ -73,6 +73,22 @@ AUTHORITIESテーブルのUSER_IDとUSER_COMMENTテーブルのMailAddress
                 ・重複なし
                     ・userForm.setMailAddressメソッドで登録実行。
                         
+
+クラス　UserCommentDatasource
+    	@Override //interface RelationUser_ID...
+	public List<MailReadDto> selectByMail(){
+		List<MailForm> dtos = mapper.selectByMail();//SELECT MAILADDRESS FROM RELATION;
+		return MailReadDto.from(dtos);//あんまやってること意味ないけど変換してる。
+	}
+    //データ取得
+    List<MailReadDto>　//生成された変更不可リスト
+
+クラス　UniqueEmailVaildator
+    重複チェックをすます。
+    
+
+
+
     ・掲示板にコメント投稿時にUser_IDをキーにしてmailaddressを探しそれを表示する。
         ・BordControllerで//保存の時に処理を追加。
 

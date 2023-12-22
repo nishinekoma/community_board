@@ -8,6 +8,8 @@ import com.example.chatappli.domain.type.MailAddress;//個人追加
 
 import jakarta.annotation.Nullable;
 
+import java.util.List;
+
 @Data
 public class MailForm {
 
@@ -18,5 +20,6 @@ public class MailForm {
     @Nullable
     private  String mailAddress;//login.html signup69に合わせる
 
+    private List<MailForm> mailFormList;//重複チェック用メールアドレスのリスト
 
 }

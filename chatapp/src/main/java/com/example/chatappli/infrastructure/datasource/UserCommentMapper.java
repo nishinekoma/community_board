@@ -2,6 +2,7 @@ package com.example.chatappli.infrastructure.datasource;
 
 import com.example.chatappli.application.dto.RelationDto;
 import com.example.chatappli.application.dto.UserCommentDto;
+import com.example.chatappli.application.form.MailForm;
 import com.example.chatappli.application.form.UserForm;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
@@ -21,10 +22,11 @@ public interface UserCommentMapper {
 	@Select("sql/selectMyComment.sql")//data.splのUSER_COMMENTもと。 結果UserApiControllerによって使われている
 	List<UserCommentReadDto> selectById(@Param("userId") String userId);
 
-
+	//メール重複チェック　個人
+	@Select("sql/selectMailAddress.sql")//RELATIONに登録されているデータから取ってくる。　詳細はsqlにコメント残す
+	List<MailForm> selectByMail();
 	//User_IDとmailAddressを入れる。 個人
-	@Insert("sql/insertRelationUserId_Mail.sql")
+	@Insert("sql/insertRelationUserId_Mail.sql")//
 	void relationwite(@Param("dto") RelationDto dto);//これに変換する
-
 }
 //SQLファイル増えたらMapperも増える。

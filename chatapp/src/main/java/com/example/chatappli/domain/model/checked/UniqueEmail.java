@@ -16,8 +16,4 @@ import java.lang.annotation.Target;
 @Constraint(validatedBy = UniqueEmailValidator.class)
 public @interface UniqueEmail {
     String message() default "Email address is already registered.";
-
-    Class<?>[] groups() default {};//デフォルトメソッド定義　返り値実装先のクラス型
-
-    Class<? extends Payload>[] payload() default {};
 }

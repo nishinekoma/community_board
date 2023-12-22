@@ -16,9 +16,9 @@ public class RelationDto {
 
     public static RelationDto from(UserForm userForm){ //sqlに入れるためにいUSERFORMをString型等に変更する。
         return new RelationDto(
-                userForm.getUsername().toString(),
-                userForm.getMailAddress().toString(),
-                userForm.getPassword().toString()
+                userForm.getUsername(),
+                userForm.getMailAddress().toString(),//MailAddressオブジェクトからStringに変換
+                userForm.getPassword()
         );
     }
 }

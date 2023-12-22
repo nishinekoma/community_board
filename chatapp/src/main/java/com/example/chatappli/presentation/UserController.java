@@ -5,6 +5,7 @@ import com.example.chatappli.application.form.CommentForm;
 import com.example.chatappli.application.form.MailForm;
 import com.example.chatappli.application.form.UserForm;
 import com.example.chatappli.application.usecase.RelationUserID_Mail;
+import com.example.chatappli.application.usecase.UniqueEmailValidator;
 import com.example.chatappli.application.usecase.UserAuthUsecase;
 import com.example.chatappli.application.usecase.UserCommentUseCase;
 import lombok.extern.slf4j.Slf4j;
@@ -32,6 +33,7 @@ public class UserController {
     private final UserCommentUseCase userCommentUseCase;
     //個人
     private final RelationUserID_Mail relationUserID_mail;
+    private final UniqueEmailValidator uniqueEmailValidator;
 
     @GetMapping
     public ModelAndView loginPage(ModelAndView modelAndView){
@@ -82,6 +84,8 @@ public class UserController {
             //ユーザ作成
             SecurityContextHolder.clearContext();//既存の認証情報をクリア
             userAuthUsecase.userCreate(userForm, request);
+            //重複処理
+            uniqueEmailValidator.isValid(mailForm,)
             //その時入力されたメアドをCommetFormに登録したい処理
             //userCommentUseCase.write(userForm);
             //入力されたmailとUser_IDを紐づけ

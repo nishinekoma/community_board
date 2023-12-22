@@ -1,5 +1,6 @@
 package com.example.chatappli.infrastructure.datasource;
 
+import com.example.chatappli.application.dto.MailReadDto;
 import com.example.chatappli.application.dto.RelationDto;
 import com.example.chatappli.application.form.MailForm;
 import com.example.chatappli.application.form.UserForm;
@@ -21,7 +22,7 @@ import org.springframework.stereotype.Repository;
 @RequiredArgsConstructor
 @Repository
 public class UserCommentDatasource implements UserCommentRepository, RelationUser_ID_Mail_Repository {
-	private final UserCommentMapper mapper;
+	private final UserCommentMapper mapper;//データを抽出するための
 
 	//Table USER_COMMENTから全て取得する
 	//@Insert("sql/insertUserComment.sql")
@@ -47,6 +48,12 @@ public class UserCommentDatasource implements UserCommentRepository, RelationUse
 		//List<UserCommentReadDto> selectById(@Param("userId") String userId);
 		List<UserCommentReadDto> dtos = mapper.selectById(userId.toString());
 		return  convert(dtos);
+	}
+
+	@Override //interface RelationUser_ID...
+	public List<MailReadDto> selectByMail(){
+		List<MailForm> dtos = mapper.selectByMail();
+		return MailReadDto.from(dtos);//あんまやってること意味ないけど変換してる。
 	}
 
 	public UserComments convert(List<UserCommentReadDto> dtos) {//convert変換するの意味
