@@ -5,9 +5,9 @@ import com.example.chatappli.application.form.CommentForm;
 import com.example.chatappli.application.form.MailForm;
 import com.example.chatappli.application.form.UserForm;
 import com.example.chatappli.application.usecase.RelationUserID_Mail;
-import com.example.chatappli.application.usecase.UniqueEmailValidator;
 import com.example.chatappli.application.usecase.UserAuthUsecase;
 import com.example.chatappli.application.usecase.UserCommentUseCase;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -33,7 +33,6 @@ public class UserController {
     private final UserCommentUseCase userCommentUseCase;
     //個人
     private final RelationUserID_Mail relationUserID_mail;
-    private final UniqueEmailValidator uniqueEmailValidator;
 
     @GetMapping
     public ModelAndView loginPage(ModelAndView modelAndView){
@@ -66,7 +65,7 @@ public class UserController {
     public ModelAndView register(
             @Validated @ModelAttribute("userForm") UserForm userForm,
             BindingResult bindingResult,
-            @Validated @ModelAttribute("mailForm") MailForm mailForm,
+            @Validated @Valid @ModelAttribute("mailForm") MailForm mailForm,
             BindingResult bindingResult1,
             HttpServletRequest request) {
         //ここはフロントの処理を書くべき
@@ -82,17 +81,22 @@ public class UserController {
         }
         //ここのtryにはバックエンドの処理を書くべき
         try {
-            System.out.println(userForm.getUsername());//debug
-            //ユーザ作成
+            //debug
+            System.out.println("username: " + userForm.getUsername()+ " mail"+ mailForm.getMailAddress());
             SecurityContextHolder.clearContext();//既存の認証情報をクリア
             userAuthUsecase.userCreate(userForm, request);
+
+            //入力されたmailとUser_IDを紐づけ
+            relationUserID_mail.relationwite(userForm, mailForm);
+            /*
             //重複処理
             if(uniqueEmailValidator.isValid(mailForm.getMailAddress(),null)) {
                 //その時入力されたメアドをCommetFormに登録したい処理
                 //userCommentUseCase.write(userForm);
                 //入力されたmailとUser_IDを紐づけ
                 relationUserID_mail.relationwite(userForm, mailForm);
-            }
+
+             */
         }catch (Exception e) {
             log.error("ユーザ作成 or ログイン失敗", e);
             return new ModelAndView("redirect:/user");

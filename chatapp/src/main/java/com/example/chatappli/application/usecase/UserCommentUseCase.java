@@ -1,8 +1,6 @@
 package com.example.chatappli.application.usecase;
 
 import com.example.chatappli.application.form.CommentForm;
-import com.example.chatappli.application.form.MailForm;
-import com.example.chatappli.application.form.UserForm;
 import com.example.chatappli.domain.model.*;
 import org.springframework.security.core.userdetails.User;
 
