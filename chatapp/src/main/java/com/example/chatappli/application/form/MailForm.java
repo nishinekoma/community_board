@@ -14,15 +14,13 @@ import org.springframework.validation.annotation.Validated;
 import java.util.List;
 
 @Data
-@Validated
-@UniqueEmail(email = "mailAddress")//作成したアノテーションと入力チェックを行うフィールド
 public class MailForm {
 
     //htmlで別々のフォームに飛ばす（1ボタンで各オブジェクト）が無理だったのでこうする
     //ここにメアド追加してそれを掲示板でも使いたい！！！　自分で作ったやつ
 
     @Email//オブジェクトにつけるとエラー出たので String型にする
-    @Valid
+    @UniqueEmail//作成したアノテーションと入力チェックを行うフィールド
     private String mailAddress;//login.html signup69に合わせる
 
 }

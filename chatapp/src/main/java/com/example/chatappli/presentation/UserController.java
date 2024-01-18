@@ -95,7 +95,6 @@ public class UserController {
                 //userCommentUseCase.write(userForm);
                 //入力されたmailとUser_IDを紐づけ
                 relationUserID_mail.relationwite(userForm, mailForm);
-
              */
         }catch (Exception e) {
             log.error("ユーザ作成 or ログイン失敗", e);

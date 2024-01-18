@@ -11,7 +11,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Target({ElementType.TYPE})//このアノテーションはクラスに対してのみ使用できる。
+@Target({ElementType.FIELD})//このアノテーションはクラスに対してのみ使用できる。
 @Retention(RetentionPolicy.RUNTIME)//実行時にアノテーション利用可能にする
 @Documented//Javadoc
 @Constraint(validatedBy = UniqueEmailValidator.class)//制約の実装クラス指定
@@ -20,7 +20,5 @@ public @interface UniqueEmail {
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 
-    //チェックする値を格納する
-    String email();
 
 }
